@@ -1,0 +1,17 @@
+.jv-drag-virtual-table {
+  .jv-drag-virtual-table_name_box {
+    display: flex;
+    align-items: center;
+
+    .jv-drag-virtual-table_name_box_drag_icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .jv-drag-virtual-table_name_box_name {
+      margin-left: 10px;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.jv-table-bar-box {
+  background-color: #ffffff;
+
+  .jv-table-bar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+
+    .jv-table-bar-header-title {
+      font-weight: bold;
+    }
+
+    .jv-table-bar-header-right {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      .jv-table-bar-header-right-btn-slot {
+        display: flex;
+        margin-right: 4px;
+      }
+    }
+  }
+
+  .jv-table-bar-box-icon {
+    transition-duration: 100ms;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    color: rgb(0 0 0 / 1);
+    cursor: pointer;
+    width: 16px;
+  }
+}
+
+.jv-table-bar-box-top {
+  padding-top: 3px;
+  padding-left: 11px;
+  padding-right: 11px;
+  border-color: rgb(220 223 230 / 1);
+  border-style: solid;
+  border-bottom-width: 1px;
+  justify-content: space-between;
+  display: flex;
+}
+
+.jv-table-bar-box-col-list {
+  padding-top: 6px;
+  padding-left: 11px;
+
+  .jv-table-bar-box-col-list-item {
+    flex: 1;
+    align-items: center;
+    display: flex;
+
+    .jv-table-bar-box-col-list-item-dragicon {
+      cursor: grab !important;
+      width: 16px;
+      margin-right: 0.5rem;
+    }
+
+    .jv-table-bar-box-col-list-item-label {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 120px;
+      display: inline-block;
+    }
+  }
+}

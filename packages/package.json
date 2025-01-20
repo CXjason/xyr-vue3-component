@@ -1,0 +1,41 @@
+{
+  "name": "xyr-vue3-component",
+  "version": "1.0.0",
+  "description": "jason xie 的 vue3 组件库",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "jsdelivr": "dist/index.umd.js",
+  "unpkg": "dist/index.umd.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
+    },
+    "./volar": {
+      "types": "./volar.d.ts"
+    },
+    "./*": "./*"
+  },
+  "files": [
+    "dist/*",
+    "**/*.d.ts"
+  ],
+  "style": "dist/style.css",
+  "sideEffects": false,
+  "scripts": {
+    "build": "vite build",
+    "watch": "vite build -w",
+    "tsc": "vue-tsc -p ../tsconfig.build.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "1.53.0"
+  },
+  "devDependencies": {
+    "vue-tsc": "^2.1.6"
+  }
+}
