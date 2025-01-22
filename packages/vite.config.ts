@@ -18,15 +18,18 @@ function getConfig(): UserConfig {
   return buildEnv.includes(lifecycle)
     ? {
         publicDir: false,
+        optimizeDeps: {
+          include: ["vue", "element-plus", "@smallwei/avue"]
+        },
         build: {
           lib: {
             entry: resolve(__dirname, "./index.ts"),
-            name: "lonsdor",
+            name: "xyr",
             fileName: format => `index.${format}.js`
           },
           rollupOptions: {
             treeShake: true,
-            external: ["vue", "element-plus"],
+            external: ["vue", "element-plus", "@smallwei/avue"],
             output: {
               globals: {
                 vue: "Vue",
@@ -34,7 +37,11 @@ function getConfig(): UserConfig {
               },
               exports: "named"
             },
-            plugins: [terser({ compress: { drop_console: true } })]
+            plugins: [
+              terser({
+                compress: { drop_console: lifecycle === "build" ? true : false }
+              })
+            ]
           },
           cache: true
         }
@@ -69,5 +76,8 @@ export default defineConfig({
   ...getConfig(),
   server: {
     port: 5175
+  },
+  css: {
+    devSourcemap: true
   }
 });

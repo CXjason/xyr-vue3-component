@@ -1,12 +1,12 @@
 <template>
   <div>
-    <lonsdor-drag-virtual-list
+    <xyr-drag-virtual-list
       ref="dragVirtualListRef"
       v-model:data="dataList"
       :props="defaultProps"
       :isShowCheckbox="false"
       @change="changeFn"
-    ></lonsdor-drag-virtual-list>
+    ></xyr-drag-virtual-list>
   </div>
 </template>
 

@@ -67,6 +67,7 @@ import {
   hydrateOnVisible,
   initCustomFormatter,
   initDirectivesForSSR,
+  init_vue_runtime_esm_bundler,
   inject,
   isMemoSame,
   isProxy,
@@ -161,7 +162,7 @@ import {
   withMemo,
   withModifiers,
   withScopeId
-} from "./chunk-GYZ4PULS.js";
+} from "./chunk-ZK4PPNBG.js";
 import {
   camelize,
   capitalize,
@@ -170,8 +171,9 @@ import {
   normalizeStyle,
   toDisplayString,
   toHandlerKey
-} from "./chunk-PK2WSZZ2.js";
-import "./chunk-DC5AMYBS.js";
+} from "./chunk-DRCVFZUG.js";
+import "./chunk-EWTE5DHJ.js";
+init_vue_runtime_esm_bundler();
 export {
   BaseTransition,
   BaseTransitionPropsValidators,

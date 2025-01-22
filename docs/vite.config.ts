@@ -10,7 +10,6 @@ import Icons from "unplugin-icons/vite";
 import IconsResolver from "unplugin-icons/resolver";
 import { pkgRoot, projRoot } from "./.vitepress/utils/constants";
 import { MarkdownTransform } from "./.vitepress/plugins/markdown-transform";
-import UnoCSS from "unocss/vite";
 
 import type { Alias } from "vite";
 
@@ -25,14 +24,13 @@ const alias: Alias[] = [
   }
 ];
 
-console.log(path.resolve(pkgRoot, "index.ts"));
-
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
 
   return {
     server: {
       host: true,
+      port: 5175,
       https: !!env.HTTPS,
       fs: {
         allow: [projRoot]
@@ -40,6 +38,9 @@ export default defineConfig(({ mode }) => {
     },
     resolve: {
       alias
+    },
+    css: {
+      devSourcemap: true
     },
     plugins: [
       VueMacros({
@@ -74,7 +75,6 @@ export default defineConfig(({ mode }) => {
       Icons({
         autoInstall: true
       }),
-      UnoCSS(),
       MarkdownTransform(),
       Inspect(),
       mkcert()

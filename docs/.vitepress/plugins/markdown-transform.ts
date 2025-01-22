@@ -130,17 +130,17 @@ const transformComponentMarkdown = (
     .map(([text, link]) => `[${text}](${link})`)
     .join(" • ");
 
-  const sourceSection = `
-## ${footerLocale[lang].source}
+  //   const sourceSection = `
+  // ## ${footerLocale[lang].source}
 
-${linksText}`;
+  // ${linksText}`;
 
-  const contributorsSection = `
-## ${footerLocale[lang].contributors}
+  //   const contributorsSection = `
+  // ## ${footerLocale[lang].contributors}
 
-<Contributors id="${componentId}" />`;
+  // <Contributors id="${componentId}" />`;
 
-  append.footers.push(sourceSection, isComponent ? contributorsSection : "");
+  //append.footers.push(sourceSection, isComponent ? contributorsSection : "");
 
   return code;
 };

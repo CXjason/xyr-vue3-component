@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { isExternal } from '../../utils'
+import { isExternal } from "../../utils";
 
 defineProps<{
-  href?: string
-  noIcon?: boolean
-}>()
+  href?: string;
+  noIcon?: boolean;
+}>();
 </script>
 
 <template>

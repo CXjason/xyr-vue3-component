@@ -18,7 +18,7 @@ import TableBar from "../../table-bar";
 VxeUI.component(VxeToolbar);
 
 defineOptions({
-  name: "lonsdorDragVirtualTable"
+  name: "xyrDragVirtualTable"
 });
 
 const props = defineProps(dragVirtualTableProps);

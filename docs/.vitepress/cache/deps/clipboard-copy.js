@@ -1,11 +1,10 @@
-import { __commonJS } from "./chunk-DC5AMYBS.js";
+import {
+  __commonJS
+} from "./chunk-EWTE5DHJ.js";
 
-// ../node_modules/.pnpm/clipboard-copy@4.0.1/node_modules/clipboard-copy/index.js
+// node_modules/.pnpm/clipboard-copy@4.0.1/node_modules/clipboard-copy/index.js
 var require_clipboard_copy = __commonJS({
-  "../node_modules/.pnpm/clipboard-copy@4.0.1/node_modules/clipboard-copy/index.js"(
-    exports,
-    module
-  ) {
+  "node_modules/.pnpm/clipboard-copy@4.0.1/node_modules/clipboard-copy/index.js"(exports, module) {
     module.exports = clipboardCopy;
     function makeError() {
       return new DOMException("The request is not allowed", "NotAllowedError");

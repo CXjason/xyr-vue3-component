@@ -23,6 +23,7 @@ import {
   hasOwn,
   hyphenate,
   includeBooleanAttr,
+  init_shared_esm_bundler,
   invokeArrayFns,
   isArray,
   isBooleanAttr,
@@ -71,8 +72,9 @@ import {
   toNumber,
   toRawType,
   toTypeString
-} from "./chunk-PK2WSZZ2.js";
-import "./chunk-DC5AMYBS.js";
+} from "./chunk-DRCVFZUG.js";
+import "./chunk-EWTE5DHJ.js";
+init_shared_esm_bundler();
 export {
   EMPTY_ARR,
   EMPTY_OBJ,

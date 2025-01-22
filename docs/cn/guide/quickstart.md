@@ -5,7 +5,7 @@ lang: cn
 
 # 快速开始
 
-本节将介绍如何在项目中使用 lonsdor-vue3-component
+本节将介绍如何在项目中使用 xyr-vue3-component
 
 ## 用法
 
@@ -16,8 +16,8 @@ lang: cn
 ```ts
 // main.ts
 import { createApp } from "vue";
-import LonsdorVue from "lonsdor-vue3-component";
-import "lonsdor-vue3-component/dist/index.css";
+import LonsdorVue from "xyr-vue3-component";
+import "xyr-vue3-component/dist/index.css";
 import App from "./App.vue";
 
 const app = createApp(App);
@@ -35,7 +35,7 @@ app.mount("#app");
   <el-button>I am ElButton</el-button>
 </template>
 <script>
-  import { LonsdorDragVirtuleList } from "lonsdor-vue3-component";
+  import { LonsdorDragVirtuleList } from "xyr-vue3-component";
   export default {
     components: { LonsdorDragVirtuleList }
   };

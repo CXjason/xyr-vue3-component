@@ -2,10 +2,10 @@
 import { computed, h, ref, useSlots, watch } from "vue";
 import { useVirtualList } from "@vueuse/core";
 import { cloneDeep } from "lodash-unified";
-import { dragVirtualListProps } from "../drag-virtual-list.js";
+import { dragVirtualListProps } from "../drag-virtual-list.ts";
 import { usePropsAlias } from "../composables/use-props-alias";
 import Card from "./card.vue";
-import type { DragVirtualListDataItem } from "../drag-virtual-list.js";
+import type { DragVirtualListDataItem } from "../drag-virtual-list.ts";
 import {
   ElCheckbox,
   ElDropdown,
@@ -20,7 +20,7 @@ const props = defineProps(dragVirtualListProps);
 const emits = defineEmits(["update:data", "change"]);
 const slots = useSlots();
 
-console.log(props);
+//console.log(props);
 
 // 列表数据
 const dataList = ref(cloneDeep(props.data));

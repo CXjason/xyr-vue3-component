@@ -25,9 +25,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "xyr-vue3-component": "workspace:*",
     "@docsearch/js": "^3.6.2",
     "@pureadmin/utils": "^2.4.8",
+    "@smallwei/avue": "^3.6.2",
     "clipboard-copy": "^4.0.1",
     "dnd-core": "^16.0.1",
     "element-plus": "^2.8.5",
@@ -42,7 +42,8 @@
     "vue3-dnd": "^2.1.0",
     "vxe-table": "^4.7.86",
     "workbox-build": "^7.1.1",
-    "workbox-core": "^7.1.0"
+    "workbox-core": "^7.1.0",
+    "xyr-vue3-component": "workspace:*"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",

@@ -1,22 +1,23 @@
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
-import LonsdorVue from "lonsdor-vue3-component";
+import XyrVue from "xyr-vue3-component";
+import "@smallwei/avue/lib/index.css";
+import "xyr-vue3-component/dist/style.css";
 
 import VPApp, { NotFound, globals } from "../vitepress";
 import { define } from "../utils/types";
+import Avue from "@smallwei/avue";
 
-import "uno.css";
 import "./style.css";
 import type { Theme } from "vitepress";
-
-console.log(LonsdorVue);
 
 export default define<Theme>({
   NotFound,
   Layout: VPApp,
   enhanceApp: ({ app }) => {
     app.use(ElementPlus);
-    app.use(LonsdorVue);
+    app.use(Avue);
+    app.use(XyrVue);
 
     globals.forEach(([name, Comp]) => {
       app.component(name, Comp);

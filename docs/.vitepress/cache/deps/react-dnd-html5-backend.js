@@ -1,6 +1,8 @@
-import { __export } from "./chunk-DC5AMYBS.js";
+import {
+  __export
+} from "./chunk-EWTE5DHJ.js";
 
-// ../node_modules/.pnpm/react-dnd-html5-backend@16.0.1/node_modules/react-dnd-html5-backend/dist/utils/js_utils.js
+// node_modules/.pnpm/react-dnd-html5-backend@16.0.1/node_modules/react-dnd-html5-backend/dist/utils/js_utils.js
 function memoize(fn) {
   let result = null;
   const memoized = () => {
@@ -12,34 +14,35 @@ function memoize(fn) {
   return memoized;
 }
 function without(items, item) {
-  return items.filter(i => i !== item);
+  return items.filter(
+    (i) => i !== item
+  );
 }
 function union(itemsA, itemsB) {
   const set = /* @__PURE__ */ new Set();
-  const insertItem = item => set.add(item);
+  const insertItem = (item) => set.add(item);
   itemsA.forEach(insertItem);
   itemsB.forEach(insertItem);
   const result = [];
-  set.forEach(key => result.push(key));
+  set.forEach(
+    (key) => result.push(key)
+  );
   return result;
 }
 
-// ../node_modules/.pnpm/react-dnd-html5-backend@16.0.1/node_modules/react-dnd-html5-backend/dist/EnterLeaveCounter.js
+// node_modules/.pnpm/react-dnd-html5-backend@16.0.1/node_modules/react-dnd-html5-backend/dist/EnterLeaveCounter.js
 var EnterLeaveCounter = class {
   enter(enteringNode) {
     const previousLength = this.entered.length;
-    const isNodeEntered = node =>
-      this.isNodeInDocument(node) &&
-      (!node.contains || node.contains(enteringNode));
-    this.entered = union(this.entered.filter(isNodeEntered), [enteringNode]);
+    const isNodeEntered = (node) => this.isNodeInDocument(node) && (!node.contains || node.contains(enteringNode));
+    this.entered = union(this.entered.filter(isNodeEntered), [
+      enteringNode
+    ]);
     return previousLength === 0 && this.entered.length > 0;
   }
   leave(leavingNode) {
     const previousLength = this.entered.length;
-    this.entered = without(
-      this.entered.filter(this.isNodeInDocument),
-      leavingNode
-    );
+    this.entered = without(this.entered.filter(this.isNodeInDocument), leavingNode);
     return previousLength > 0 && this.entered.length === 0;
   }
   reset() {
@@ -51,17 +54,15 @@ var EnterLeaveCounter = class {
   }
 };
 
-// ../node_modules/.pnpm/react-dnd-html5-backend@16.0.1/node_modules/react-dnd-html5-backend/dist/NativeDragSources/NativeDragSource.js
+// node_modules/.pnpm/react-dnd-html5-backend@16.0.1/node_modules/react-dnd-html5-backend/dist/NativeDragSources/NativeDragSource.js
 var NativeDragSource = class {
   initializeExposedProperties() {
-    Object.keys(this.config.exposeProperties).forEach(property => {
+    Object.keys(this.config.exposeProperties).forEach((property) => {
       Object.defineProperty(this.item, property, {
         configurable: true,
         enumerable: true,
         get() {
-          console.warn(
-            `Browser doesn't allow reading "${property}" until the drop event.`
-          );
+          console.warn(`Browser doesn't allow reading "${property}" until the drop event.`);
           return null;
         }
       });
@@ -70,7 +71,7 @@ var NativeDragSource = class {
   loadDataTransfer(dataTransfer) {
     if (dataTransfer) {
       const newProperties = {};
-      Object.keys(this.config.exposeProperties).forEach(property => {
+      Object.keys(this.config.exposeProperties).forEach((property) => {
         const propertyFn = this.config.exposeProperties[property];
         if (propertyFn != null) {
           newProperties[property] = {
@@ -92,7 +93,8 @@ var NativeDragSource = class {
   isDragging(monitor, handle) {
     return handle === monitor.getSourceId();
   }
-  endDrag() {}
+  endDrag() {
+  }
   constructor(config) {
     this.config = config;
     this.item = {};
@@ -100,7 +102,7 @@ var NativeDragSource = class {
   }
 };
 
-// ../node_modules/.pnpm/react-dnd-html5-backend@16.0.1/node_modules/react-dnd-html5-backend/dist/NativeTypes.js
+// node_modules/.pnpm/react-dnd-html5-backend@16.0.1/node_modules/react-dnd-html5-backend/dist/NativeTypes.js
 var NativeTypes_exports = {};
 __export(NativeTypes_exports, {
   FILE: () => FILE,
@@ -113,7 +115,7 @@ var URL = "__NATIVE_URL__";
 var TEXT = "__NATIVE_TEXT__";
 var HTML = "__NATIVE_HTML__";
 
-// ../node_modules/.pnpm/react-dnd-html5-backend@16.0.1/node_modules/react-dnd-html5-backend/dist/NativeDragSources/getDataFromDataTransfer.js
+// node_modules/.pnpm/react-dnd-html5-backend@16.0.1/node_modules/react-dnd-html5-backend/dist/NativeDragSources/getDataFromDataTransfer.js
 function getDataFromDataTransfer(dataTransfer, typesToTry, defaultValue) {
   const result = typesToTry.reduce(
     (resultSoFar, typeToTry) => resultSoFar || dataTransfer.getData(typeToTry),
@@ -122,43 +124,51 @@ function getDataFromDataTransfer(dataTransfer, typesToTry, defaultValue) {
   return result != null ? result : defaultValue;
 }
 
-// ../node_modules/.pnpm/react-dnd-html5-backend@16.0.1/node_modules/react-dnd-html5-backend/dist/NativeDragSources/nativeTypesConfig.js
+// node_modules/.pnpm/react-dnd-html5-backend@16.0.1/node_modules/react-dnd-html5-backend/dist/NativeDragSources/nativeTypesConfig.js
 var nativeTypesConfig = {
   [FILE]: {
     exposeProperties: {
-      files: dataTransfer => Array.prototype.slice.call(dataTransfer.files),
-      items: dataTransfer => dataTransfer.items,
-      dataTransfer: dataTransfer => dataTransfer
+      files: (dataTransfer) => Array.prototype.slice.call(dataTransfer.files),
+      items: (dataTransfer) => dataTransfer.items,
+      dataTransfer: (dataTransfer) => dataTransfer
     },
-    matchesTypes: ["Files"]
+    matchesTypes: [
+      "Files"
+    ]
   },
   [HTML]: {
     exposeProperties: {
-      html: (dataTransfer, matchesTypes) =>
-        getDataFromDataTransfer(dataTransfer, matchesTypes, ""),
-      dataTransfer: dataTransfer => dataTransfer
+      html: (dataTransfer, matchesTypes) => getDataFromDataTransfer(dataTransfer, matchesTypes, ""),
+      dataTransfer: (dataTransfer) => dataTransfer
     },
-    matchesTypes: ["Html", "text/html"]
+    matchesTypes: [
+      "Html",
+      "text/html"
+    ]
   },
   [URL]: {
     exposeProperties: {
-      urls: (dataTransfer, matchesTypes) =>
-        getDataFromDataTransfer(dataTransfer, matchesTypes, "").split("\n"),
-      dataTransfer: dataTransfer => dataTransfer
+      urls: (dataTransfer, matchesTypes) => getDataFromDataTransfer(dataTransfer, matchesTypes, "").split("\n"),
+      dataTransfer: (dataTransfer) => dataTransfer
     },
-    matchesTypes: ["Url", "text/uri-list"]
+    matchesTypes: [
+      "Url",
+      "text/uri-list"
+    ]
   },
   [TEXT]: {
     exposeProperties: {
-      text: (dataTransfer, matchesTypes) =>
-        getDataFromDataTransfer(dataTransfer, matchesTypes, ""),
-      dataTransfer: dataTransfer => dataTransfer
+      text: (dataTransfer, matchesTypes) => getDataFromDataTransfer(dataTransfer, matchesTypes, ""),
+      dataTransfer: (dataTransfer) => dataTransfer
     },
-    matchesTypes: ["Text", "text/plain"]
+    matchesTypes: [
+      "Text",
+      "text/plain"
+    ]
   }
 };
 
-// ../node_modules/.pnpm/react-dnd-html5-backend@16.0.1/node_modules/react-dnd-html5-backend/dist/NativeDragSources/index.js
+// node_modules/.pnpm/react-dnd-html5-backend@16.0.1/node_modules/react-dnd-html5-backend/dist/NativeDragSources/index.js
 function createNativeDragSource(type, dataTransfer) {
   const config = nativeTypesConfig[type];
   if (!config) {
@@ -172,31 +182,27 @@ function matchNativeItemType(dataTransfer) {
   if (!dataTransfer) {
     return null;
   }
-  const dataTransferTypes = Array.prototype.slice.call(
-    dataTransfer.types || []
-  );
-  return (
-    Object.keys(nativeTypesConfig).filter(nativeItemType => {
-      const typeConfig = nativeTypesConfig[nativeItemType];
-      if (
-        !(typeConfig === null || typeConfig === void 0
-          ? void 0
-          : typeConfig.matchesTypes)
-      ) {
-        return false;
-      }
-      return typeConfig.matchesTypes.some(
-        t => dataTransferTypes.indexOf(t) > -1
-      );
-    })[0] || null
-  );
+  const dataTransferTypes = Array.prototype.slice.call(dataTransfer.types || []);
+  return Object.keys(nativeTypesConfig).filter((nativeItemType) => {
+    const typeConfig = nativeTypesConfig[nativeItemType];
+    if (!(typeConfig === null || typeConfig === void 0 ? void 0 : typeConfig.matchesTypes)) {
+      return false;
+    }
+    return typeConfig.matchesTypes.some(
+      (t) => dataTransferTypes.indexOf(t) > -1
+    );
+  })[0] || null;
 }
 
-// ../node_modules/.pnpm/react-dnd-html5-backend@16.0.1/node_modules/react-dnd-html5-backend/dist/BrowserDetector.js
-var isFirefox = memoize(() => /firefox/i.test(navigator.userAgent));
-var isSafari = memoize(() => Boolean(window.safari));
+// node_modules/.pnpm/react-dnd-html5-backend@16.0.1/node_modules/react-dnd-html5-backend/dist/BrowserDetector.js
+var isFirefox = memoize(
+  () => /firefox/i.test(navigator.userAgent)
+);
+var isSafari = memoize(
+  () => Boolean(window.safari)
+);
 
-// ../node_modules/.pnpm/react-dnd-html5-backend@16.0.1/node_modules/react-dnd-html5-backend/dist/MonotonicInterpolant.js
+// node_modules/.pnpm/react-dnd-html5-backend@16.0.1/node_modules/react-dnd-html5-backend/dist/MonotonicInterpolant.js
 var MonotonicInterpolant = class {
   interpolate(x) {
     const { xs, ys, c1s, c2s, c3s } = this;
@@ -229,7 +235,9 @@ var MonotonicInterpolant = class {
     for (let i = 0; i < length; i++) {
       indexes.push(i);
     }
-    indexes.sort((a, b) => (xs[a] < xs[b] ? -1 : 1));
+    indexes.sort(
+      (a, b) => xs[a] < xs[b] ? -1 : 1
+    );
     const dys = [];
     const dxs = [];
     const ms = [];
@@ -242,7 +250,9 @@ var MonotonicInterpolant = class {
       dys.push(dy);
       ms.push(dy / dx);
     }
-    const c1s = [ms[0]];
+    const c1s = [
+      ms[0]
+    ];
     for (let i2 = 0; i2 < dxs.length - 1; i2++) {
       const m2 = ms[i2];
       const mNext = ms[i2 + 1];
@@ -252,9 +262,7 @@ var MonotonicInterpolant = class {
         dx = dxs[i2];
         const dxNext = dxs[i2 + 1];
         const common = dx + dxNext;
-        c1s.push(
-          (3 * common) / ((common + dxNext) / m2 + (common + dx) / mNext)
-        );
+        c1s.push(3 * common / ((common + dxNext) / m2 + (common + dx) / mNext));
       }
     }
     c1s.push(ms[ms.length - 1]);
@@ -277,7 +285,7 @@ var MonotonicInterpolant = class {
   }
 };
 
-// ../node_modules/.pnpm/react-dnd-html5-backend@16.0.1/node_modules/react-dnd-html5-backend/dist/OffsetUtils.js
+// node_modules/.pnpm/react-dnd-html5-backend@16.0.1/node_modules/react-dnd-html5-backend/dist/OffsetUtils.js
 var ELEMENT_NODE = 1;
 function getNodeClientOffset(node) {
   const el = node.nodeType === ELEMENT_NODE ? node : node.parentElement;
@@ -298,13 +306,7 @@ function getEventClientOffset(e) {
 }
 function isImageNode(node) {
   var ref;
-  return (
-    node.nodeName === "IMG" &&
-    (isFirefox() ||
-      !((ref = document.documentElement) === null || ref === void 0
-        ? void 0
-        : ref.contains(node)))
-  );
+  return node.nodeName === "IMG" && (isFirefox() || !((ref = document.documentElement) === null || ref === void 0 ? void 0 : ref.contains(node)));
 }
 function getDragPreviewSize(isImage, dragPreview, sourceWidth, sourceHeight) {
   let dragPreviewWidth = isImage ? dragPreview.width : sourceWidth;
@@ -318,13 +320,7 @@ function getDragPreviewSize(isImage, dragPreview, sourceWidth, sourceHeight) {
     dragPreviewHeight
   };
 }
-function getDragPreviewOffset(
-  sourceNode,
-  dragPreview,
-  clientOffset,
-  anchorPoint,
-  offsetPoint
-) {
+function getDragPreviewOffset(sourceNode, dragPreview, clientOffset, anchorPoint, offsetPoint) {
   const isImage = isImageNode(dragPreview);
   const dragPreviewNode = isImage ? sourceNode : dragPreview;
   const dragPreviewNodeOffsetFromClient = getNodeClientOffset(dragPreviewNode);
@@ -334,24 +330,20 @@ function getDragPreviewOffset(
   };
   const { offsetWidth: sourceWidth, offsetHeight: sourceHeight } = sourceNode;
   const { anchorX, anchorY } = anchorPoint;
-  const { dragPreviewWidth, dragPreviewHeight } = getDragPreviewSize(
-    isImage,
-    dragPreview,
-    sourceWidth,
-    sourceHeight
-  );
+  const { dragPreviewWidth, dragPreviewHeight } = getDragPreviewSize(isImage, dragPreview, sourceWidth, sourceHeight);
   const calculateYOffset = () => {
-    const interpolantY = new MonotonicInterpolant(
-      [0, 0.5, 1],
-      [
-        // Dock to the top
-        offsetFromDragPreview.y,
-        // Align at the center
-        (offsetFromDragPreview.y / sourceHeight) * dragPreviewHeight,
-        // Dock to the bottom
-        offsetFromDragPreview.y + dragPreviewHeight - sourceHeight
-      ]
-    );
+    const interpolantY = new MonotonicInterpolant([
+      0,
+      0.5,
+      1
+    ], [
+      // Dock to the top
+      offsetFromDragPreview.y,
+      // Align at the center
+      offsetFromDragPreview.y / sourceHeight * dragPreviewHeight,
+      // Dock to the bottom
+      offsetFromDragPreview.y + dragPreviewHeight - sourceHeight
+    ]);
     let y = interpolantY.interpolate(anchorY);
     if (isSafari() && isImage) {
       y += (window.devicePixelRatio - 1) * dragPreviewHeight;
@@ -359,17 +351,18 @@ function getDragPreviewOffset(
     return y;
   };
   const calculateXOffset = () => {
-    const interpolantX = new MonotonicInterpolant(
-      [0, 0.5, 1],
-      [
-        // Dock to the left
-        offsetFromDragPreview.x,
-        // Align at the center
-        (offsetFromDragPreview.x / sourceWidth) * dragPreviewWidth,
-        // Dock to the right
-        offsetFromDragPreview.x + dragPreviewWidth - sourceWidth
-      ]
-    );
+    const interpolantX = new MonotonicInterpolant([
+      0,
+      0.5,
+      1
+    ], [
+      // Dock to the left
+      offsetFromDragPreview.x,
+      // Align at the center
+      offsetFromDragPreview.x / sourceWidth * dragPreviewWidth,
+      // Dock to the right
+      offsetFromDragPreview.x + dragPreviewWidth - sourceWidth
+    ]);
     return interpolantX.interpolate(anchorX);
   };
   const { offsetX, offsetY } = offsetPoint;
@@ -381,7 +374,7 @@ function getDragPreviewOffset(
   };
 }
 
-// ../node_modules/.pnpm/react-dnd-html5-backend@16.0.1/node_modules/react-dnd-html5-backend/dist/OptionsReader.js
+// node_modules/.pnpm/react-dnd-html5-backend@16.0.1/node_modules/react-dnd-html5-backend/dist/OptionsReader.js
 var OptionsReader = class {
   get window() {
     if (this.globalContext) {
@@ -393,11 +386,7 @@ var OptionsReader = class {
   }
   get document() {
     var ref;
-    if (
-      (ref = this.globalContext) === null || ref === void 0
-        ? void 0
-        : ref.document
-    ) {
+    if ((ref = this.globalContext) === null || ref === void 0 ? void 0 : ref.document) {
       return this.globalContext.document;
     } else if (this.window) {
       return this.window.document;
@@ -407,11 +396,7 @@ var OptionsReader = class {
   }
   get rootElement() {
     var ref;
-    return (
-      ((ref = this.optionsArgs) === null || ref === void 0
-        ? void 0
-        : ref.rootElement) || this.window
-    );
+    return ((ref = this.optionsArgs) === null || ref === void 0 ? void 0 : ref.rootElement) || this.window;
   }
   constructor(globalContext, options) {
     this.ownerDocument = null;
@@ -420,7 +405,7 @@ var OptionsReader = class {
   }
 };
 
-// ../node_modules/.pnpm/react-dnd-html5-backend@16.0.1/node_modules/react-dnd-html5-backend/dist/HTML5BackendImpl.js
+// node_modules/.pnpm/react-dnd-html5-backend@16.0.1/node_modules/react-dnd-html5-backend/dist/HTML5BackendImpl.js
 function _defineProperty(obj, key, value) {
   if (key in obj) {
     Object.defineProperty(obj, key, {
@@ -439,13 +424,11 @@ function _objectSpread(target) {
     var source = arguments[i] != null ? arguments[i] : {};
     var ownKeys = Object.keys(source);
     if (typeof Object.getOwnPropertySymbols === "function") {
-      ownKeys = ownKeys.concat(
-        Object.getOwnPropertySymbols(source).filter(function (sym) {
-          return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-        })
-      );
+      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function(sym) {
+        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+      }));
     }
-    ownKeys.forEach(function (key) {
+    ownKeys.forEach(function(key) {
       _defineProperty(target, key, source[key]);
     });
   }
@@ -453,8 +436,8 @@ function _objectSpread(target) {
 }
 var HTML5BackendImpl = class {
   /**
-   * Generate profiling statistics for the HTML5Backend.
-   */
+  * Generate profiling statistics for the HTML5Backend.
+  */
   profile() {
     var ref, ref1;
     return {
@@ -462,16 +445,10 @@ var HTML5BackendImpl = class {
       sourcePreviewNodeOptions: this.sourcePreviewNodeOptions.size,
       sourceNodeOptions: this.sourceNodeOptions.size,
       sourceNodes: this.sourceNodes.size,
-      dragStartSourceIds:
-        ((ref = this.dragStartSourceIds) === null || ref === void 0
-          ? void 0
-          : ref.length) || 0,
+      dragStartSourceIds: ((ref = this.dragStartSourceIds) === null || ref === void 0 ? void 0 : ref.length) || 0,
       dropTargetIds: this.dropTargetIds.length,
       dragEnterTargetIds: this.dragEnterTargetIds.length,
-      dragOverTargetIds:
-        ((ref1 = this.dragOverTargetIds) === null || ref1 === void 0
-          ? void 0
-          : ref1.length) || 0
+      dragOverTargetIds: ((ref1 = this.dragOverTargetIds) === null || ref1 === void 0 ? void 0 : ref1.length) || 0
     };
   }
   // public for test
@@ -482,8 +459,8 @@ var HTML5BackendImpl = class {
     return this.options.document;
   }
   /**
-   * Get the root element to use for event subscriptions
-   */
+  * Get the root element to use for event subscriptions
+  */
   get rootElement() {
     return this.options.rootElement;
   }
@@ -508,9 +485,7 @@ var HTML5BackendImpl = class {
     this.clearCurrentDragSourceNode();
     if (this.asyncEndDragFrameId) {
       var ref;
-      (ref = this.window) === null || ref === void 0
-        ? void 0
-        : ref.cancelAnimationFrame(this.asyncEndDragFrameId);
+      (ref = this.window) === null || ref === void 0 ? void 0 : ref.cancelAnimationFrame(this.asyncEndDragFrameId);
     }
   }
   connectDragPreview(sourceId, node, options) {
@@ -524,8 +499,8 @@ var HTML5BackendImpl = class {
   connectDragSource(sourceId, node, options) {
     this.sourceNodes.set(sourceId, node);
     this.sourceNodeOptions.set(sourceId, options);
-    const handleDragStart = e => this.handleDragStart(e, sourceId);
-    const handleSelectStart = e => this.handleSelectStart(e);
+    const handleDragStart = (e) => this.handleDragStart(e, sourceId);
+    const handleSelectStart = (e) => this.handleSelectStart(e);
     node.setAttribute("draggable", "true");
     node.addEventListener("dragstart", handleDragStart);
     node.addEventListener("selectstart", handleSelectStart);
@@ -538,9 +513,9 @@ var HTML5BackendImpl = class {
     };
   }
   connectDropTarget(targetId, node) {
-    const handleDragEnter = e => this.handleDragEnter(e, targetId);
-    const handleDragOver = e => this.handleDragOver(e, targetId);
-    const handleDrop = e => this.handleDrop(e, targetId);
+    const handleDragEnter = (e) => this.handleDragEnter(e, targetId);
+    const handleDragOver = (e) => this.handleDragOver(e, targetId);
+    const handleDrop = (e) => this.handleDrop(e, targetId);
     node.addEventListener("dragenter", handleDragEnter);
     node.addEventListener("dragover", handleDragOver);
     node.addEventListener("drop", handleDrop);
@@ -570,23 +545,11 @@ var HTML5BackendImpl = class {
       return;
     }
     target.removeEventListener("dragstart", this.handleTopDragStart);
-    target.removeEventListener(
-      "dragstart",
-      this.handleTopDragStartCapture,
-      true
-    );
+    target.removeEventListener("dragstart", this.handleTopDragStartCapture, true);
     target.removeEventListener("dragend", this.handleTopDragEndCapture, true);
     target.removeEventListener("dragenter", this.handleTopDragEnter);
-    target.removeEventListener(
-      "dragenter",
-      this.handleTopDragEnterCapture,
-      true
-    );
-    target.removeEventListener(
-      "dragleave",
-      this.handleTopDragLeaveCapture,
-      true
-    );
+    target.removeEventListener("dragenter", this.handleTopDragEnterCapture, true);
+    target.removeEventListener("dragleave", this.handleTopDragLeaveCapture, true);
     target.removeEventListener("dragover", this.handleTopDragOver);
     target.removeEventListener("dragover", this.handleTopDragOverCapture, true);
     target.removeEventListener("drop", this.handleTopDrop);
@@ -595,12 +558,9 @@ var HTML5BackendImpl = class {
   getCurrentSourceNodeOptions() {
     const sourceId = this.monitor.getSourceId();
     const sourceNodeOptions = this.sourceNodeOptions.get(sourceId);
-    return _objectSpread(
-      {
-        dropEffect: this.altKeyPressed ? "copy" : "move"
-      },
-      sourceNodeOptions || {}
-    );
+    return _objectSpread({
+      dropEffect: this.altKeyPressed ? "copy" : "move"
+    }, sourceNodeOptions || {});
   }
   getCurrentDropEffect() {
     if (this.isDraggingNativeItem()) {
@@ -610,31 +570,26 @@ var HTML5BackendImpl = class {
   }
   getCurrentSourcePreviewNodeOptions() {
     const sourceId = this.monitor.getSourceId();
-    const sourcePreviewNodeOptions =
-      this.sourcePreviewNodeOptions.get(sourceId);
-    return _objectSpread(
-      {
-        anchorX: 0.5,
-        anchorY: 0.5,
-        captureDraggingState: false
-      },
-      sourcePreviewNodeOptions || {}
-    );
+    const sourcePreviewNodeOptions = this.sourcePreviewNodeOptions.get(sourceId);
+    return _objectSpread({
+      anchorX: 0.5,
+      anchorY: 0.5,
+      captureDraggingState: false
+    }, sourcePreviewNodeOptions || {});
   }
   isDraggingNativeItem() {
     const itemType = this.monitor.getItemType();
     return Object.keys(NativeTypes_exports).some(
-      key => NativeTypes_exports[key] === itemType
+      (key) => NativeTypes_exports[key] === itemType
     );
   }
   beginDragNativeItem(type, dataTransfer) {
     this.clearCurrentDragSourceNode();
     this.currentNativeSource = createNativeDragSource(type, dataTransfer);
-    this.currentNativeHandle = this.registry.addSource(
-      type,
-      this.currentNativeSource
-    );
-    this.actions.beginDrag([this.currentNativeHandle]);
+    this.currentNativeHandle = this.registry.addSource(type, this.currentNativeSource);
+    this.actions.beginDrag([
+      this.currentNativeHandle
+    ]);
   }
   setCurrentDragSourceNode(node) {
     this.clearCurrentDragSourceNode();
@@ -642,13 +597,7 @@ var HTML5BackendImpl = class {
     const MOUSE_MOVE_TIMEOUT = 1e3;
     this.mouseMoveTimeoutTimer = setTimeout(() => {
       var ref;
-      return (ref = this.rootElement) === null || ref === void 0
-        ? void 0
-        : ref.addEventListener(
-            "mousemove",
-            this.endDragIfSourceWasRemovedFromDOM,
-            true
-          );
+      return (ref = this.rootElement) === null || ref === void 0 ? void 0 : ref.addEventListener("mousemove", this.endDragIfSourceWasRemovedFromDOM, true);
     }, MOUSE_MOVE_TIMEOUT);
   }
   clearCurrentDragSourceNode() {
@@ -656,14 +605,8 @@ var HTML5BackendImpl = class {
       this.currentDragSourceNode = null;
       if (this.rootElement) {
         var ref;
-        (ref = this.window) === null || ref === void 0
-          ? void 0
-          : ref.clearTimeout(this.mouseMoveTimeoutTimer || void 0);
-        this.rootElement.removeEventListener(
-          "mousemove",
-          this.endDragIfSourceWasRemovedFromDOM,
-          true
-        );
+        (ref = this.window) === null || ref === void 0 ? void 0 : ref.clearTimeout(this.mouseMoveTimeoutTimer || void 0);
+        this.rootElement.removeEventListener("mousemove", this.endDragIfSourceWasRemovedFromDOM, true);
       }
       this.mouseMoveTimeoutTimer = null;
       return true;
@@ -708,9 +651,9 @@ var HTML5BackendImpl = class {
     this.dragOverTargetIds = null;
     this.lastClientOffset = null;
     this.hoverRafId = null;
-    this.getSourceClientOffset = sourceId => {
+    this.getSourceClientOffset = (sourceId) => {
       const source = this.sourceNodes.get(sourceId);
-      return (source && getNodeClientOffset(source)) || null;
+      return source && getNodeClientOffset(source) || null;
     };
     this.endDragNativeItem = () => {
       if (!this.isDraggingNativeItem()) {
@@ -723,13 +666,8 @@ var HTML5BackendImpl = class {
       this.currentNativeHandle = null;
       this.currentNativeSource = null;
     };
-    this.isNodeInDocument = node => {
-      return Boolean(
-        node &&
-          this.document &&
-          this.document.body &&
-          this.document.body.contains(node)
-      );
+    this.isNodeInDocument = (node) => {
+      return Boolean(node && this.document && this.document.body && this.document.body.contains(node));
     };
     this.endDragIfSourceWasRemovedFromDOM = () => {
       const node = this.currentDragSourceNode;
@@ -741,11 +679,8 @@ var HTML5BackendImpl = class {
       }
       this.cancelHover();
     };
-    this.scheduleHover = dragOverTargetIds => {
-      if (
-        this.hoverRafId === null &&
-        typeof requestAnimationFrame !== "undefined"
-      ) {
+    this.scheduleHover = (dragOverTargetIds) => {
+      if (this.hoverRafId === null && typeof requestAnimationFrame !== "undefined") {
         this.hoverRafId = requestAnimationFrame(() => {
           if (this.monitor.isDragging()) {
             this.actions.hover(dragOverTargetIds || [], {
@@ -757,10 +692,7 @@ var HTML5BackendImpl = class {
       }
     };
     this.cancelHover = () => {
-      if (
-        this.hoverRafId !== null &&
-        typeof cancelAnimationFrame !== "undefined"
-      ) {
+      if (this.hoverRafId !== null && typeof cancelAnimationFrame !== "undefined") {
         cancelAnimationFrame(this.hoverRafId);
         this.hoverRafId = null;
       }
@@ -769,7 +701,7 @@ var HTML5BackendImpl = class {
       this.clearCurrentDragSourceNode();
       this.dragStartSourceIds = [];
     };
-    this.handleTopDragStart = e => {
+    this.handleTopDragStart = (e) => {
       if (e.defaultPrevented) {
         return;
       }
@@ -791,11 +723,9 @@ var HTML5BackendImpl = class {
         if (dataTransfer && typeof dataTransfer.setDragImage === "function") {
           const sourceId = this.monitor.getSourceId();
           const sourceNode = this.sourceNodes.get(sourceId);
-          const dragPreview =
-            this.sourcePreviewNodes.get(sourceId) || sourceNode;
+          const dragPreview = this.sourcePreviewNodes.get(sourceId) || sourceNode;
           if (dragPreview) {
-            const { anchorX, anchorY, offsetX, offsetY } =
-              this.getCurrentSourcePreviewNodeOptions();
+            const { anchorX, anchorY, offsetX, offsetY } = this.getCurrentSourcePreviewNodeOptions();
             const anchorPoint = {
               anchorX,
               anchorY
@@ -804,41 +734,27 @@ var HTML5BackendImpl = class {
               offsetX,
               offsetY
             };
-            const dragPreviewOffset = getDragPreviewOffset(
-              sourceNode,
-              dragPreview,
-              clientOffset,
-              anchorPoint,
-              offsetPoint
-            );
-            dataTransfer.setDragImage(
-              dragPreview,
-              dragPreviewOffset.x,
-              dragPreviewOffset.y
-            );
+            const dragPreviewOffset = getDragPreviewOffset(sourceNode, dragPreview, clientOffset, anchorPoint, offsetPoint);
+            dataTransfer.setDragImage(dragPreview, dragPreviewOffset.x, dragPreviewOffset.y);
           }
         }
         try {
-          dataTransfer === null || dataTransfer === void 0
-            ? void 0
-            : dataTransfer.setData("application/json", {});
-        } catch (err) {}
+          dataTransfer === null || dataTransfer === void 0 ? void 0 : dataTransfer.setData("application/json", {});
+        } catch (err) {
+        }
         this.setCurrentDragSourceNode(e.target);
-        const { captureDraggingState } =
-          this.getCurrentSourcePreviewNodeOptions();
+        const { captureDraggingState } = this.getCurrentSourcePreviewNodeOptions();
         if (!captureDraggingState) {
-          setTimeout(() => this.actions.publishDragSource(), 0);
+          setTimeout(
+            () => this.actions.publishDragSource(),
+            0
+          );
         } else {
           this.actions.publishDragSource();
         }
       } else if (nativeType) {
         this.beginDragNativeItem(nativeType);
-      } else if (
-        dataTransfer &&
-        !dataTransfer.types &&
-        ((e.target && !e.target.hasAttribute) ||
-          !e.target.hasAttribute("draggable"))
-      ) {
+      } else if (dataTransfer && !dataTransfer.types && (e.target && !e.target.hasAttribute || !e.target.hasAttribute("draggable"))) {
         return;
       } else {
         e.preventDefault();
@@ -850,13 +766,11 @@ var HTML5BackendImpl = class {
       }
       this.cancelHover();
     };
-    this.handleTopDragEnterCapture = e => {
+    this.handleTopDragEnterCapture = (e) => {
       this.dragEnterTargetIds = [];
       if (this.isDraggingNativeItem()) {
         var ref;
-        (ref = this.currentNativeSource) === null || ref === void 0
-          ? void 0
-          : ref.loadDataTransfer(e.dataTransfer);
+        (ref = this.currentNativeSource) === null || ref === void 0 ? void 0 : ref.loadDataTransfer(e.dataTransfer);
       }
       const isFirstEnter = this.enterLeaveCounter.enter(e.target);
       if (!isFirstEnter || this.monitor.isDragging()) {
@@ -868,7 +782,7 @@ var HTML5BackendImpl = class {
         this.beginDragNativeItem(nativeType, dataTransfer);
       }
     };
-    this.handleTopDragEnter = e => {
+    this.handleTopDragEnter = (e) => {
       const { dragEnterTargetIds } = this;
       this.dragEnterTargetIds = [];
       if (!this.monitor.isDragging()) {
@@ -880,8 +794,8 @@ var HTML5BackendImpl = class {
           clientOffset: getEventClientOffset(e)
         });
       }
-      const canDrop = dragEnterTargetIds.some(targetId =>
-        this.monitor.canDropOnTarget(targetId)
+      const canDrop = dragEnterTargetIds.some(
+        (targetId) => this.monitor.canDropOnTarget(targetId)
       );
       if (canDrop) {
         e.preventDefault();
@@ -890,16 +804,14 @@ var HTML5BackendImpl = class {
         }
       }
     };
-    this.handleTopDragOverCapture = e => {
+    this.handleTopDragOverCapture = (e) => {
       this.dragOverTargetIds = [];
       if (this.isDraggingNativeItem()) {
         var ref;
-        (ref = this.currentNativeSource) === null || ref === void 0
-          ? void 0
-          : ref.loadDataTransfer(e.dataTransfer);
+        (ref = this.currentNativeSource) === null || ref === void 0 ? void 0 : ref.loadDataTransfer(e.dataTransfer);
       }
     };
-    this.handleTopDragOver = e => {
+    this.handleTopDragOver = (e) => {
       const { dragOverTargetIds } = this;
       this.dragOverTargetIds = [];
       if (!this.monitor.isDragging()) {
@@ -912,8 +824,8 @@ var HTML5BackendImpl = class {
       this.altKeyPressed = e.altKey;
       this.lastClientOffset = getEventClientOffset(e);
       this.scheduleHover(dragOverTargetIds);
-      const canDrop = (dragOverTargetIds || []).some(targetId =>
-        this.monitor.canDropOnTarget(targetId)
+      const canDrop = (dragOverTargetIds || []).some(
+        (targetId) => this.monitor.canDropOnTarget(targetId)
       );
       if (canDrop) {
         e.preventDefault();
@@ -929,7 +841,7 @@ var HTML5BackendImpl = class {
         }
       }
     };
-    this.handleTopDragLeaveCapture = e => {
+    this.handleTopDragLeaveCapture = (e) => {
       if (this.isDraggingNativeItem()) {
         e.preventDefault();
       }
@@ -938,24 +850,25 @@ var HTML5BackendImpl = class {
         return;
       }
       if (this.isDraggingNativeItem()) {
-        setTimeout(() => this.endDragNativeItem(), 0);
+        setTimeout(
+          () => this.endDragNativeItem(),
+          0
+        );
       }
       this.cancelHover();
     };
-    this.handleTopDropCapture = e => {
+    this.handleTopDropCapture = (e) => {
       this.dropTargetIds = [];
       if (this.isDraggingNativeItem()) {
         var ref;
         e.preventDefault();
-        (ref = this.currentNativeSource) === null || ref === void 0
-          ? void 0
-          : ref.loadDataTransfer(e.dataTransfer);
+        (ref = this.currentNativeSource) === null || ref === void 0 ? void 0 : ref.loadDataTransfer(e.dataTransfer);
       } else if (matchNativeItemType(e.dataTransfer)) {
         e.preventDefault();
       }
       this.enterLeaveCounter.reset();
     };
-    this.handleTopDrop = e => {
+    this.handleTopDrop = (e) => {
       const { dropTargetIds } = this;
       this.dropTargetIds = [];
       this.actions.hover(dropTargetIds, {
@@ -971,17 +884,12 @@ var HTML5BackendImpl = class {
       }
       this.cancelHover();
     };
-    this.handleSelectStart = e => {
+    this.handleSelectStart = (e) => {
       const target = e.target;
       if (typeof target.dragDrop !== "function") {
         return;
       }
-      if (
-        target.tagName === "INPUT" ||
-        target.tagName === "SELECT" ||
-        target.tagName === "TEXTAREA" ||
-        target.isContentEditable
-      ) {
+      if (target.tagName === "INPUT" || target.tagName === "SELECT" || target.tagName === "TEXTAREA" || target.isContentEditable) {
         return;
       }
       e.preventDefault();
@@ -995,20 +903,23 @@ var HTML5BackendImpl = class {
   }
 };
 
-// ../node_modules/.pnpm/react-dnd-html5-backend@16.0.1/node_modules/react-dnd-html5-backend/dist/getEmptyImage.js
+// node_modules/.pnpm/react-dnd-html5-backend@16.0.1/node_modules/react-dnd-html5-backend/dist/getEmptyImage.js
 var emptyImage;
 function getEmptyImage() {
   if (!emptyImage) {
     emptyImage = new Image();
-    emptyImage.src =
-      "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
+    emptyImage.src = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
   }
   return emptyImage;
 }
 
-// ../node_modules/.pnpm/react-dnd-html5-backend@16.0.1/node_modules/react-dnd-html5-backend/dist/index.js
+// node_modules/.pnpm/react-dnd-html5-backend@16.0.1/node_modules/react-dnd-html5-backend/dist/index.js
 var HTML5Backend = function createBackend(manager, context, options) {
   return new HTML5BackendImpl(manager, context, options);
 };
-export { HTML5Backend, NativeTypes_exports as NativeTypes, getEmptyImage };
+export {
+  HTML5Backend,
+  NativeTypes_exports as NativeTypes,
+  getEmptyImage
+};
 //# sourceMappingURL=react-dnd-html5-backend.js.map

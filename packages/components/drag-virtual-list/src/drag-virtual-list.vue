@@ -8,7 +8,7 @@ import "element-plus/es/components/dropdown/style/css";
 import "../style/index.scss";
 
 defineOptions({
-  name: "lonsdorDragVirtualList"
+  name: "xyrDragVirtualList"
 });
 
 let comRef = ref();

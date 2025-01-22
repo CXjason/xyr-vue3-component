@@ -1,4 +1,7 @@
-import { set } from "./chunk-EMGCDJG6.js";
+import {
+  init_vue_demi,
+  set
+} from "./chunk-HKXRTV5W.js";
 import {
   computed,
   defineComponent,
@@ -10,16 +13,16 @@ import {
   ref,
   unref,
   watchEffect
-} from "./chunk-GYZ4PULS.js";
-import "./chunk-PK2WSZZ2.js";
-import { __commonJS, __toESM } from "./chunk-DC5AMYBS.js";
+} from "./chunk-ZK4PPNBG.js";
+import "./chunk-DRCVFZUG.js";
+import {
+  __commonJS,
+  __toESM
+} from "./chunk-EWTE5DHJ.js";
 
-// ../node_modules/.pnpm/fast-deep-equal@3.1.3/node_modules/fast-deep-equal/index.js
+// node_modules/.pnpm/fast-deep-equal@3.1.3/node_modules/fast-deep-equal/index.js
 var require_fast_deep_equal = __commonJS({
-  "../node_modules/.pnpm/fast-deep-equal@3.1.3/node_modules/fast-deep-equal/index.js"(
-    exports,
-    module
-  ) {
+  "node_modules/.pnpm/fast-deep-equal@3.1.3/node_modules/fast-deep-equal/index.js"(exports, module) {
     "use strict";
     module.exports = function equal3(a, b) {
       if (a === b) return true;
@@ -29,15 +32,13 @@ var require_fast_deep_equal = __commonJS({
         if (Array.isArray(a)) {
           length = a.length;
           if (length != b.length) return false;
-          for (i = length; i-- !== 0; ) if (!equal3(a[i], b[i])) return false;
+          for (i = length; i-- !== 0; )
+            if (!equal3(a[i], b[i])) return false;
           return true;
         }
-        if (a.constructor === RegExp)
-          return a.source === b.source && a.flags === b.flags;
-        if (a.valueOf !== Object.prototype.valueOf)
-          return a.valueOf() === b.valueOf();
-        if (a.toString !== Object.prototype.toString)
-          return a.toString() === b.toString();
+        if (a.constructor === RegExp) return a.source === b.source && a.flags === b.flags;
+        if (a.valueOf !== Object.prototype.valueOf) return a.valueOf() === b.valueOf();
+        if (a.toString !== Object.prototype.toString) return a.toString() === b.toString();
         keys = Object.keys(a);
         length = keys.length;
         if (length !== Object.keys(b).length) return false;
@@ -54,7 +55,11 @@ var require_fast_deep_equal = __commonJS({
   }
 });
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/core/DndContext.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/core/DndProvider.js
+init_vue_demi();
+
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/core/DndContext.js
+init_vue_demi();
 var DndContextSymbol = Symbol.for("DndContextType");
 function useDndContextProvider(dndContext) {
   provide(DndContextSymbol, dndContext);
@@ -63,10 +68,10 @@ function useDndContextInjector() {
   return inject(DndContextSymbol);
 }
 
-// ../node_modules/.pnpm/redux@4.2.1/node_modules/redux/es/redux.js
-var $$observable = (function () {
-  return (typeof Symbol === "function" && Symbol.observable) || "@@observable";
-})();
+// node_modules/.pnpm/redux@4.2.1/node_modules/redux/es/redux.js
+var $$observable = function() {
+  return typeof Symbol === "function" && Symbol.observable || "@@observable";
+}();
 var randomString = function randomString2() {
   return Math.random().toString(36).substring(7).split("").join(".");
 };
@@ -117,20 +122,11 @@ function ctorName(val) {
   return typeof val.constructor === "function" ? val.constructor.name : null;
 }
 function isError(val) {
-  return (
-    val instanceof Error ||
-    (typeof val.message === "string" &&
-      val.constructor &&
-      typeof val.constructor.stackTraceLimit === "number")
-  );
+  return val instanceof Error || typeof val.message === "string" && val.constructor && typeof val.constructor.stackTraceLimit === "number";
 }
 function isDate(val) {
   if (val instanceof Date) return true;
-  return (
-    typeof val.toDateString === "function" &&
-    typeof val.getDate === "function" &&
-    typeof val.setDate === "function"
-  );
+  return typeof val.toDateString === "function" && typeof val.getDate === "function" && typeof val.setDate === "function";
 }
 function kindOf(val) {
   var typeOfVal = typeof val;
@@ -141,15 +137,8 @@ function kindOf(val) {
 }
 function createStore(reducer, preloadedState, enhancer) {
   var _ref2;
-  if (
-    (typeof preloadedState === "function" && typeof enhancer === "function") ||
-    (typeof enhancer === "function" && typeof arguments[3] === "function")
-  ) {
-    throw new Error(
-      false
-        ? formatProdErrorMessage(0)
-        : "It looks like you are passing several store enhancers to createStore(). This is not supported. Instead, compose them together to a single function. See https://redux.js.org/tutorials/fundamentals/part-4-store#creating-a-store-with-enhancers for an example."
-    );
+  if (typeof preloadedState === "function" && typeof enhancer === "function" || typeof enhancer === "function" && typeof arguments[3] === "function") {
+    throw new Error(false ? formatProdErrorMessage(0) : "It looks like you are passing several store enhancers to createStore(). This is not supported. Instead, compose them together to a single function. See https://redux.js.org/tutorials/fundamentals/part-4-store#creating-a-store-with-enhancers for an example.");
   }
   if (typeof preloadedState === "function" && typeof enhancer === "undefined") {
     enhancer = preloadedState;
@@ -157,24 +146,12 @@ function createStore(reducer, preloadedState, enhancer) {
   }
   if (typeof enhancer !== "undefined") {
     if (typeof enhancer !== "function") {
-      throw new Error(
-        false
-          ? formatProdErrorMessage(1)
-          : "Expected the enhancer to be a function. Instead, received: '" +
-            kindOf(enhancer) +
-            "'"
-      );
+      throw new Error(false ? formatProdErrorMessage(1) : "Expected the enhancer to be a function. Instead, received: '" + kindOf(enhancer) + "'");
     }
     return enhancer(createStore)(reducer, preloadedState);
   }
   if (typeof reducer !== "function") {
-    throw new Error(
-      false
-        ? formatProdErrorMessage(2)
-        : "Expected the root reducer to be a function. Instead, received: '" +
-          kindOf(reducer) +
-          "'"
-    );
+    throw new Error(false ? formatProdErrorMessage(2) : "Expected the root reducer to be a function. Instead, received: '" + kindOf(reducer) + "'");
   }
   var currentReducer = reducer;
   var currentState = preloadedState;
@@ -188,30 +165,16 @@ function createStore(reducer, preloadedState, enhancer) {
   }
   function getState() {
     if (isDispatching) {
-      throw new Error(
-        false
-          ? formatProdErrorMessage(3)
-          : "You may not call store.getState() while the reducer is executing. The reducer has already received the state as an argument. Pass it down from the top reducer instead of reading it from the store."
-      );
+      throw new Error(false ? formatProdErrorMessage(3) : "You may not call store.getState() while the reducer is executing. The reducer has already received the state as an argument. Pass it down from the top reducer instead of reading it from the store.");
     }
     return currentState;
   }
   function subscribe(listener) {
     if (typeof listener !== "function") {
-      throw new Error(
-        false
-          ? formatProdErrorMessage(4)
-          : "Expected the listener to be a function. Instead, received: '" +
-            kindOf(listener) +
-            "'"
-      );
+      throw new Error(false ? formatProdErrorMessage(4) : "Expected the listener to be a function. Instead, received: '" + kindOf(listener) + "'");
     }
     if (isDispatching) {
-      throw new Error(
-        false
-          ? formatProdErrorMessage(5)
-          : "You may not call store.subscribe() while the reducer is executing. If you would like to be notified after the store has been updated, subscribe from a component and invoke store.getState() in the callback to access the latest state. See https://redux.js.org/api/store#subscribelistener for more details."
-      );
+      throw new Error(false ? formatProdErrorMessage(5) : "You may not call store.subscribe() while the reducer is executing. If you would like to be notified after the store has been updated, subscribe from a component and invoke store.getState() in the callback to access the latest state. See https://redux.js.org/api/store#subscribelistener for more details.");
     }
     var isSubscribed = true;
     ensureCanMutateNextListeners();
@@ -221,11 +184,7 @@ function createStore(reducer, preloadedState, enhancer) {
         return;
       }
       if (isDispatching) {
-        throw new Error(
-          false
-            ? formatProdErrorMessage(6)
-            : "You may not unsubscribe from a store listener while the reducer is executing. See https://redux.js.org/api/store#subscribelistener for more details."
-        );
+        throw new Error(false ? formatProdErrorMessage(6) : "You may not unsubscribe from a store listener while the reducer is executing. See https://redux.js.org/api/store#subscribelistener for more details.");
       }
       isSubscribed = false;
       ensureCanMutateNextListeners();
@@ -236,25 +195,13 @@ function createStore(reducer, preloadedState, enhancer) {
   }
   function dispatch(action) {
     if (!isPlainObject(action)) {
-      throw new Error(
-        false
-          ? formatProdErrorMessage(7)
-          : "Actions must be plain objects. Instead, the actual type was: '" +
-            kindOf(action) +
-            "'. You may need to add middleware to your store setup to handle dispatching other values, such as 'redux-thunk' to handle dispatching functions. See https://redux.js.org/tutorials/fundamentals/part-4-store#middleware and https://redux.js.org/tutorials/fundamentals/part-6-async-logic#using-the-redux-thunk-middleware for examples."
-      );
+      throw new Error(false ? formatProdErrorMessage(7) : "Actions must be plain objects. Instead, the actual type was: '" + kindOf(action) + "'. You may need to add middleware to your store setup to handle dispatching other values, such as 'redux-thunk' to handle dispatching functions. See https://redux.js.org/tutorials/fundamentals/part-4-store#middleware and https://redux.js.org/tutorials/fundamentals/part-6-async-logic#using-the-redux-thunk-middleware for examples.");
     }
     if (typeof action.type === "undefined") {
-      throw new Error(
-        false
-          ? formatProdErrorMessage(8)
-          : 'Actions may not have an undefined "type" property. You may have misspelled an action type string constant.'
-      );
+      throw new Error(false ? formatProdErrorMessage(8) : 'Actions may not have an undefined "type" property. You may have misspelled an action type string constant.');
     }
     if (isDispatching) {
-      throw new Error(
-        false ? formatProdErrorMessage(9) : "Reducers may not dispatch actions."
-      );
+      throw new Error(false ? formatProdErrorMessage(9) : "Reducers may not dispatch actions.");
     }
     try {
       isDispatching = true;
@@ -262,7 +209,7 @@ function createStore(reducer, preloadedState, enhancer) {
     } finally {
       isDispatching = false;
     }
-    var listeners = (currentListeners = nextListeners);
+    var listeners = currentListeners = nextListeners;
     for (var i = 0; i < listeners.length; i++) {
       var listener = listeners[i];
       listener();
@@ -271,12 +218,7 @@ function createStore(reducer, preloadedState, enhancer) {
   }
   function replaceReducer(nextReducer) {
     if (typeof nextReducer !== "function") {
-      throw new Error(
-        false
-          ? formatProdErrorMessage(10)
-          : "Expected the nextReducer to be a function. Instead, received: '" +
-            kindOf(nextReducer)
-      );
+      throw new Error(false ? formatProdErrorMessage(10) : "Expected the nextReducer to be a function. Instead, received: '" + kindOf(nextReducer));
     }
     currentReducer = nextReducer;
     dispatch({
@@ -286,60 +228,46 @@ function createStore(reducer, preloadedState, enhancer) {
   function observable() {
     var _ref;
     var outerSubscribe = subscribe;
-    return (
-      (_ref = {
-        /**
-         * The minimal observable subscription method.
-         * @param {Object} observer Any object that can be used as an observer.
-         * The observer object should have a `next` method.
-         * @returns {subscription} An object with an `unsubscribe` method that can
-         * be used to unsubscribe the observable from the store, and prevent further
-         * emission of values from the observable.
-         */
-        subscribe: function subscribe2(observer) {
-          if (typeof observer !== "object" || observer === null) {
-            throw new Error(
-              false
-                ? formatProdErrorMessage(11)
-                : "Expected the observer to be an object. Instead, received: '" +
-                  kindOf(observer) +
-                  "'"
-            );
-          }
-          function observeState() {
-            if (observer.next) {
-              observer.next(getState());
-            }
-          }
-          observeState();
-          var unsubscribe = outerSubscribe(observeState);
-          return {
-            unsubscribe
-          };
+    return _ref = {
+      /**
+       * The minimal observable subscription method.
+       * @param {Object} observer Any object that can be used as an observer.
+       * The observer object should have a `next` method.
+       * @returns {subscription} An object with an `unsubscribe` method that can
+       * be used to unsubscribe the observable from the store, and prevent further
+       * emission of values from the observable.
+       */
+      subscribe: function subscribe2(observer) {
+        if (typeof observer !== "object" || observer === null) {
+          throw new Error(false ? formatProdErrorMessage(11) : "Expected the observer to be an object. Instead, received: '" + kindOf(observer) + "'");
         }
-      }),
-      (_ref[$$observable] = function () {
-        return this;
-      }),
-      _ref
-    );
+        function observeState() {
+          if (observer.next) {
+            observer.next(getState());
+          }
+        }
+        observeState();
+        var unsubscribe = outerSubscribe(observeState);
+        return {
+          unsubscribe
+        };
+      }
+    }, _ref[$$observable] = function() {
+      return this;
+    }, _ref;
   }
   dispatch({
     type: ActionTypes.INIT
   });
-  return (
-    (_ref2 = {
-      dispatch,
-      subscribe,
-      getState,
-      replaceReducer
-    }),
-    (_ref2[$$observable] = observable),
-    _ref2
-  );
+  return _ref2 = {
+    dispatch,
+    subscribe,
+    getState,
+    replaceReducer
+  }, _ref2[$$observable] = observable, _ref2;
 }
 
-// ../node_modules/.pnpm/@react-dnd+invariant@4.0.2/node_modules/@react-dnd/invariant/dist/index.js
+// node_modules/.pnpm/@react-dnd+invariant@4.0.2/node_modules/@react-dnd/invariant/dist/index.js
 function invariant(condition, format, ...args) {
   if (isProduction()) {
     if (format === void 0) {
@@ -349,16 +277,12 @@ function invariant(condition, format, ...args) {
   if (!condition) {
     let error;
     if (format === void 0) {
-      error = new Error(
-        "Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings."
-      );
+      error = new Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");
     } else {
       let argIndex = 0;
-      error = new Error(
-        format.replace(/%s/g, function () {
-          return args[argIndex++];
-        })
-      );
+      error = new Error(format.replace(/%s/g, function() {
+        return args[argIndex++];
+      }));
       error.name = "Invariant Violation";
     }
     error.framesToPop = 1;
@@ -369,21 +293,24 @@ function isProduction() {
   return typeof process !== "undefined" && false;
 }
 
-// ../node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/utils/js_utils.js
+// node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/utils/js_utils.js
 function get(obj, path, defaultValue) {
-  return path
-    .split(".")
-    .reduce((a, c) => (a && a[c] ? a[c] : defaultValue || null), obj);
+  return path.split(".").reduce(
+    (a, c) => a && a[c] ? a[c] : defaultValue || null,
+    obj
+  );
 }
 function without(items, item) {
-  return items.filter(i => i !== item);
+  return items.filter(
+    (i) => i !== item
+  );
 }
 function isObject(input) {
   return typeof input === "object";
 }
 function xor(itemsA, itemsB) {
   const map = /* @__PURE__ */ new Map();
-  const insertItem = item => {
+  const insertItem = (item) => {
     map.set(item, map.has(item) ? map.get(item) + 1 : 1);
   };
   itemsA.forEach(insertItem);
@@ -397,10 +324,12 @@ function xor(itemsA, itemsB) {
   return result;
 }
 function intersection(itemsA, itemsB) {
-  return itemsA.filter(t => itemsB.indexOf(t) > -1);
+  return itemsA.filter(
+    (t) => itemsB.indexOf(t) > -1
+  );
 }
 
-// ../node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/actions/dragDrop/types.js
+// node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/actions/dragDrop/types.js
 var INIT_COORDS = "dnd-core/INIT_COORDS";
 var BEGIN_DRAG = "dnd-core/BEGIN_DRAG";
 var PUBLISH_DRAG_SOURCE = "dnd-core/PUBLISH_DRAG_SOURCE";
@@ -408,7 +337,7 @@ var HOVER = "dnd-core/HOVER";
 var DROP = "dnd-core/DROP";
 var END_DRAG = "dnd-core/END_DRAG";
 
-// ../node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/actions/dragDrop/local/setClientOffset.js
+// node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/actions/dragDrop/local/setClientOffset.js
 function setClientOffset(clientOffset, sourceClientOffset) {
   return {
     type: INIT_COORDS,
@@ -419,7 +348,7 @@ function setClientOffset(clientOffset, sourceClientOffset) {
   };
 }
 
-// ../node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/actions/dragDrop/beginDrag.js
+// node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/actions/dragDrop/beginDrag.js
 var ResetCoordinatesAction = {
   type: INIT_COORDS,
   payload: {
@@ -428,17 +357,10 @@ var ResetCoordinatesAction = {
   }
 };
 function createBeginDrag(manager) {
-  return function beginDrag(
-    sourceIds = [],
-    options = {
-      publishSource: true
-    }
-  ) {
-    const {
-      publishSource = true,
-      clientOffset,
-      getSourceClientOffset: getSourceClientOffset2
-    } = options;
+  return function beginDrag(sourceIds = [], options = {
+    publishSource: true
+  }) {
+    const { publishSource = true, clientOffset, getSourceClientOffset: getSourceClientOffset2 } = options;
     const monitor = manager.getMonitor();
     const registry = manager.getRegistry();
     manager.dispatch(setClientOffset(clientOffset));
@@ -480,18 +402,12 @@ function createBeginDrag(manager) {
 }
 function verifyInvariants(sourceIds, monitor, registry) {
   invariant(!monitor.isDragging(), "Cannot call beginDrag while dragging.");
-  sourceIds.forEach(function (sourceId) {
-    invariant(
-      registry.getSource(sourceId),
-      "Expected sourceIds to be registered."
-    );
+  sourceIds.forEach(function(sourceId) {
+    invariant(registry.getSource(sourceId), "Expected sourceIds to be registered.");
   });
 }
 function verifyGetSourceClientOffsetIsFunction(getSourceClientOffset2) {
-  invariant(
-    typeof getSourceClientOffset2 === "function",
-    "When clientOffset is provided, getSourceClientOffset must be a function."
-  );
+  invariant(typeof getSourceClientOffset2 === "function", "When clientOffset is provided, getSourceClientOffset must be a function.");
 }
 function verifyItemIsObject(item) {
   invariant(isObject(item), "Item must be an object.");
@@ -507,7 +423,7 @@ function getDraggableSource(sourceIds, monitor) {
   return sourceId;
 }
 
-// ../node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/actions/dragDrop/drop.js
+// node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/actions/dragDrop/drop.js
 function _defineProperty2(obj, key, value) {
   if (key in obj) {
     Object.defineProperty(obj, key, {
@@ -526,13 +442,11 @@ function _objectSpread(target) {
     var source = arguments[i] != null ? arguments[i] : {};
     var ownKeys = Object.keys(source);
     if (typeof Object.getOwnPropertySymbols === "function") {
-      ownKeys = ownKeys.concat(
-        Object.getOwnPropertySymbols(source).filter(function (sym) {
-          return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-        })
-      );
+      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function(sym) {
+        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+      }));
     }
-    ownKeys.forEach(function (key) {
+    ownKeys.forEach(function(key) {
       _defineProperty2(target, key, source[key]);
     });
   }
@@ -545,12 +459,7 @@ function createDrop(manager) {
     verifyInvariants2(monitor);
     const targetIds = getDroppableTargets(monitor);
     targetIds.forEach((targetId, index) => {
-      const dropResult = determineDropResult(
-        targetId,
-        index,
-        registry,
-        monitor
-      );
+      const dropResult = determineDropResult(targetId, index, registry, monitor);
       const action = {
         type: DROP,
         payload: {
@@ -563,10 +472,7 @@ function createDrop(manager) {
 }
 function verifyInvariants2(monitor) {
   invariant(monitor.isDragging(), "Cannot call drop while not dragging.");
-  invariant(
-    !monitor.didDrop(),
-    "Cannot call drop twice during one drag operation."
-  );
+  invariant(!monitor.didDrop(), "Cannot call drop twice during one drag operation.");
 }
 function determineDropResult(targetId, index, registry, monitor) {
   const target = registry.getTarget(targetId);
@@ -578,20 +484,15 @@ function determineDropResult(targetId, index, registry, monitor) {
   return dropResult;
 }
 function verifyDropResultType(dropResult) {
-  invariant(
-    typeof dropResult === "undefined" || isObject(dropResult),
-    "Drop result must either be an object or undefined."
-  );
+  invariant(typeof dropResult === "undefined" || isObject(dropResult), "Drop result must either be an object or undefined.");
 }
 function getDroppableTargets(monitor) {
-  const targetIds = monitor
-    .getTargetIds()
-    .filter(monitor.canDropOnTarget, monitor);
+  const targetIds = monitor.getTargetIds().filter(monitor.canDropOnTarget, monitor);
   targetIds.reverse();
   return targetIds;
 }
 
-// ../node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/actions/dragDrop/endDrag.js
+// node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/actions/dragDrop/endDrag.js
 function createEndDrag(manager) {
   return function endDrag() {
     const monitor = manager.getMonitor();
@@ -612,17 +513,17 @@ function verifyIsDragging(monitor) {
   invariant(monitor.isDragging(), "Cannot call endDrag while not dragging.");
 }
 
-// ../node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/utils/matchesType.js
+// node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/utils/matchesType.js
 function matchesType(targetType, draggedItemType) {
   if (draggedItemType === null) {
     return targetType === null;
   }
-  return Array.isArray(targetType)
-    ? targetType.some(t => t === draggedItemType)
-    : targetType === draggedItemType;
+  return Array.isArray(targetType) ? targetType.some(
+    (t) => t === draggedItemType
+  ) : targetType === draggedItemType;
 }
 
-// ../node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/actions/dragDrop/hover.js
+// node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/actions/dragDrop/hover.js
 function createHover(manager) {
   return function hover(targetIdsArg, { clientOffset } = {}) {
     verifyTargetIdsIsArray(targetIdsArg);
@@ -650,10 +551,7 @@ function checkInvariants(targetIds, monitor, registry) {
   invariant(!monitor.didDrop(), "Cannot call hover after drop.");
   for (let i = 0; i < targetIds.length; i++) {
     const targetId = targetIds[i];
-    invariant(
-      targetIds.lastIndexOf(targetId) === i,
-      "Expected targetIds to be unique in the passed array."
-    );
+    invariant(targetIds.lastIndexOf(targetId) === i, "Expected targetIds to be unique in the passed array.");
     const target = registry.getTarget(targetId);
     invariant(target, "Expected targetIds to be registered.");
   }
@@ -668,13 +566,13 @@ function removeNonMatchingTargetIds(targetIds, registry, draggedItemType) {
   }
 }
 function hoverAllTargets(targetIds, monitor, registry) {
-  targetIds.forEach(function (targetId) {
+  targetIds.forEach(function(targetId) {
     const target = registry.getTarget(targetId);
     target.hover(monitor, targetId);
   });
 }
 
-// ../node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/actions/dragDrop/publishDragSource.js
+// node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/actions/dragDrop/publishDragSource.js
 function createPublishDragSource(manager) {
   return function publishDragSource() {
     const monitor = manager.getMonitor();
@@ -687,7 +585,7 @@ function createPublishDragSource(manager) {
   };
 }
 
-// ../node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/actions/dragDrop/index.js
+// node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/actions/dragDrop/index.js
 function createDragDropActions(manager) {
   return {
     beginDrag: createBeginDrag(manager),
@@ -698,7 +596,7 @@ function createDragDropActions(manager) {
   };
 }
 
-// ../node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/classes/DragDropManagerImpl.js
+// node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/classes/DragDropManagerImpl.js
 var DragDropManagerImpl = class {
   receiveBackend(backend) {
     this.backend = backend;
@@ -753,7 +651,7 @@ var DragDropManagerImpl = class {
   }
 };
 
-// ../node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/utils/coords.js
+// node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/utils/coords.js
 function add(a, b) {
   return {
     x: a.x + b.x,
@@ -767,15 +665,11 @@ function subtract(a, b) {
   };
 }
 function getSourceClientOffset(state) {
-  const { clientOffset, initialClientOffset, initialSourceClientOffset } =
-    state;
+  const { clientOffset, initialClientOffset, initialSourceClientOffset } = state;
   if (!clientOffset || !initialClientOffset || !initialSourceClientOffset) {
     return null;
   }
-  return subtract(
-    add(clientOffset, initialSourceClientOffset),
-    initialClientOffset
-  );
+  return subtract(add(clientOffset, initialSourceClientOffset), initialClientOffset);
 }
 function getDifferenceFromInitialOffset(state) {
   const { clientOffset, initialClientOffset } = state;
@@ -785,7 +679,7 @@ function getDifferenceFromInitialOffset(state) {
   return subtract(clientOffset, initialClientOffset);
 }
 
-// ../node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/utils/dirtiness.js
+// node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/utils/dirtiness.js
 var NONE = [];
 var ALL = [];
 NONE.__IS_NONE__ = true;
@@ -801,24 +695,18 @@ function areDirty(dirtyIds, handlerIds) {
   return commonIds.length > 0;
 }
 
-// ../node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/classes/DragDropMonitorImpl.js
+// node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/classes/DragDropMonitorImpl.js
 var DragDropMonitorImpl = class {
   subscribeToStateChange(listener, options = {}) {
     const { handlerIds } = options;
     invariant(typeof listener === "function", "listener must be a function.");
-    invariant(
-      typeof handlerIds === "undefined" || Array.isArray(handlerIds),
-      "handlerIds, when specified, must be an array of strings."
-    );
+    invariant(typeof handlerIds === "undefined" || Array.isArray(handlerIds), "handlerIds, when specified, must be an array of strings.");
     let prevStateId = this.store.getState().stateId;
     const handleChange = () => {
       const state = this.store.getState();
       const currentStateId = state.stateId;
       try {
-        const canSkipListener =
-          currentStateId === prevStateId ||
-          (currentStateId === prevStateId + 1 &&
-            !areDirty(state.dirtyHandlerIds, handlerIds));
+        const canSkipListener = currentStateId === prevStateId || currentStateId === prevStateId + 1 && !areDirty(state.dirtyHandlerIds, handlerIds);
         if (!canSkipListener) {
           listener();
         }
@@ -863,9 +751,7 @@ var DragDropMonitorImpl = class {
     }
     const targetType = this.registry.getTargetType(targetId);
     const draggedItemType = this.getItemType();
-    return (
-      matchesType(targetType, draggedItemType) && target.canDrop(this, targetId)
-    );
+    return matchesType(targetType, draggedItemType) && target.canDrop(this, targetId);
   }
   isDragging() {
     return Boolean(this.getItemType());
@@ -886,12 +772,9 @@ var DragDropMonitorImpl = class {
     }
     return source.isDragging(this, sourceId);
   }
-  isOverTarget(
-    targetId,
-    options = {
-      shallow: false
-    }
-  ) {
+  isOverTarget(targetId, options = {
+    shallow: false
+  }) {
     if (!targetId) {
       return false;
     }
@@ -957,10 +840,9 @@ var DragDropMonitorImpl = class {
   }
 };
 
-// ../node_modules/.pnpm/@react-dnd+asap@5.0.2/node_modules/@react-dnd/asap/dist/makeRequestCall.js
+// node_modules/.pnpm/@react-dnd+asap@5.0.2/node_modules/@react-dnd/asap/dist/makeRequestCall.js
 var scope = typeof global !== "undefined" ? global : self;
-var BrowserMutationObserver =
-  scope.MutationObserver || scope.WebKitMutationObserver;
+var BrowserMutationObserver = scope.MutationObserver || scope.WebKitMutationObserver;
 function makeRequestCallFromTimer(callback) {
   return function requestCall() {
     const timeoutHandle = setTimeout(handleTimer, 0);
@@ -984,46 +866,47 @@ function makeRequestCallFromMutationObserver(callback) {
     node.data = toggle;
   };
 }
-var makeRequestCall =
-  typeof BrowserMutationObserver === "function"
-    ? // reliably everywhere they are implemented.
-      // They are implemented in all modern browsers.
-      //
-      // - Android 4-4.3
-      // - Chrome 26-34
-      // - Firefox 14-29
-      // - Internet Explorer 11
-      // - iPad Safari 6-7.1
-      // - iPhone Safari 7-7.1
-      // - Safari 6-7
-      makeRequestCallFromMutationObserver
-    : // task queue, are implemented in Internet Explorer 10, Safari 5.0-1, and Opera
-      // 11-12, and in web workers in many engines.
-      // Although message channels yield to any queued rendering and IO tasks, they
-      // would be better than imposing the 4ms delay of timers.
-      // However, they do not work reliably in Internet Explorer or Safari.
-      // Internet Explorer 10 is the only browser that has setImmediate but does
-      // not have MutationObservers.
-      // Although setImmediate yields to the browser's renderer, it would be
-      // preferrable to falling back to setTimeout since it does not have
-      // the minimum 4ms penalty.
-      // Unfortunately there appears to be a bug in Internet Explorer 10 Mobile (and
-      // Desktop to a lesser extent) that renders both setImmediate and
-      // MessageChannel useless for the purposes of ASAP.
-      // https://github.com/kriskowal/q/issues/396
-      // Timers are implemented universally.
-      // We fall back to timers in workers in most engines, and in foreground
-      // contexts in the following browsers.
-      // However, note that even this simple case requires nuances to operate in a
-      // broad spectrum of browsers.
-      //
-      // - Firefox 3-13
-      // - Internet Explorer 6-9
-      // - iPad Safari 4.3
-      // - Lynx 2.8.7
-      makeRequestCallFromTimer;
+var makeRequestCall = typeof BrowserMutationObserver === "function" ? (
+  // reliably everywhere they are implemented.
+  // They are implemented in all modern browsers.
+  //
+  // - Android 4-4.3
+  // - Chrome 26-34
+  // - Firefox 14-29
+  // - Internet Explorer 11
+  // - iPad Safari 6-7.1
+  // - iPhone Safari 7-7.1
+  // - Safari 6-7
+  makeRequestCallFromMutationObserver
+) : (
+  // task queue, are implemented in Internet Explorer 10, Safari 5.0-1, and Opera
+  // 11-12, and in web workers in many engines.
+  // Although message channels yield to any queued rendering and IO tasks, they
+  // would be better than imposing the 4ms delay of timers.
+  // However, they do not work reliably in Internet Explorer or Safari.
+  // Internet Explorer 10 is the only browser that has setImmediate but does
+  // not have MutationObservers.
+  // Although setImmediate yields to the browser's renderer, it would be
+  // preferrable to falling back to setTimeout since it does not have
+  // the minimum 4ms penalty.
+  // Unfortunately there appears to be a bug in Internet Explorer 10 Mobile (and
+  // Desktop to a lesser extent) that renders both setImmediate and
+  // MessageChannel useless for the purposes of ASAP.
+  // https://github.com/kriskowal/q/issues/396
+  // Timers are implemented universally.
+  // We fall back to timers in workers in most engines, and in foreground
+  // contexts in the following browsers.
+  // However, note that even this simple case requires nuances to operate in a
+  // broad spectrum of browsers.
+  //
+  // - Firefox 3-13
+  // - Internet Explorer 6-9
+  // - iPad Safari 4.3
+  // - Lynx 2.8.7
+  makeRequestCallFromTimer
+);
 
-// ../node_modules/.pnpm/@react-dnd+asap@5.0.2/node_modules/@react-dnd/asap/dist/AsapQueue.js
+// node_modules/.pnpm/@react-dnd+asap@5.0.2/node_modules/@react-dnd/asap/dist/AsapQueue.js
 var AsapQueue = class {
   // Use the fastest means possible to execute a task in its own turn, with
   // priority over other events including IO, animation, reflow, and redraw
@@ -1056,11 +939,7 @@ var AsapQueue = class {
         this.index++;
         q[currentIndex].call();
         if (this.index > this.capacity) {
-          for (
-            let scan = 0, newLength = q.length - this.index;
-            scan < newLength;
-            scan++
-          ) {
+          for (let scan = 0, newLength = q.length - this.index; scan < newLength; scan++) {
             q[scan] = q[scan + this.index];
           }
           q.length -= this.index;
@@ -1071,7 +950,7 @@ var AsapQueue = class {
       this.index = 0;
       this.flushing = false;
     };
-    this.registerPendingError = err => {
+    this.registerPendingError = (err) => {
       this.pendingErrors.push(err);
       this.requestErrorThrow();
     };
@@ -1084,7 +963,7 @@ var AsapQueue = class {
   }
 };
 
-// ../node_modules/.pnpm/@react-dnd+asap@5.0.2/node_modules/@react-dnd/asap/dist/RawTask.js
+// node_modules/.pnpm/@react-dnd+asap@5.0.2/node_modules/@react-dnd/asap/dist/RawTask.js
 var RawTask = class {
   call() {
     try {
@@ -1103,13 +982,14 @@ var RawTask = class {
   }
 };
 
-// ../node_modules/.pnpm/@react-dnd+asap@5.0.2/node_modules/@react-dnd/asap/dist/TaskFactory.js
+// node_modules/.pnpm/@react-dnd+asap@5.0.2/node_modules/@react-dnd/asap/dist/TaskFactory.js
 var TaskFactory = class {
   create(task) {
     const tasks = this.freeTasks;
-    const t1 = tasks.length
-      ? tasks.pop()
-      : new RawTask(this.onError, t => (tasks[tasks.length] = t));
+    const t1 = tasks.length ? tasks.pop() : new RawTask(
+      this.onError,
+      (t) => tasks[tasks.length] = t
+    );
     t1.task = task;
     return t1;
   }
@@ -1119,14 +999,14 @@ var TaskFactory = class {
   }
 };
 
-// ../node_modules/.pnpm/@react-dnd+asap@5.0.2/node_modules/@react-dnd/asap/dist/asap.js
+// node_modules/.pnpm/@react-dnd+asap@5.0.2/node_modules/@react-dnd/asap/dist/asap.js
 var asapQueue = new AsapQueue();
 var taskFactory = new TaskFactory(asapQueue.registerPendingError);
 function asap(task) {
   asapQueue.enqueueTask(taskFactory.create(task));
 }
 
-// ../node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/actions/registry.js
+// node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/actions/registry.js
 var ADD_SOURCE = "dnd-core/ADD_SOURCE";
 var ADD_TARGET = "dnd-core/ADD_TARGET";
 var REMOVE_SOURCE = "dnd-core/REMOVE_SOURCE";
@@ -1164,62 +1044,41 @@ function removeTarget(targetId) {
   };
 }
 
-// ../node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/contracts.js
+// node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/contracts.js
 function validateSourceContract(source) {
-  invariant(
-    typeof source.canDrag === "function",
-    "Expected canDrag to be a function."
-  );
-  invariant(
-    typeof source.beginDrag === "function",
-    "Expected beginDrag to be a function."
-  );
-  invariant(
-    typeof source.endDrag === "function",
-    "Expected endDrag to be a function."
-  );
+  invariant(typeof source.canDrag === "function", "Expected canDrag to be a function.");
+  invariant(typeof source.beginDrag === "function", "Expected beginDrag to be a function.");
+  invariant(typeof source.endDrag === "function", "Expected endDrag to be a function.");
 }
 function validateTargetContract(target) {
-  invariant(
-    typeof target.canDrop === "function",
-    "Expected canDrop to be a function."
-  );
-  invariant(
-    typeof target.hover === "function",
-    "Expected hover to be a function."
-  );
-  invariant(
-    typeof target.drop === "function",
-    "Expected beginDrag to be a function."
-  );
+  invariant(typeof target.canDrop === "function", "Expected canDrop to be a function.");
+  invariant(typeof target.hover === "function", "Expected hover to be a function.");
+  invariant(typeof target.drop === "function", "Expected beginDrag to be a function.");
 }
 function validateType(type, allowArray) {
   if (allowArray && Array.isArray(type)) {
-    type.forEach(t => validateType(t, false));
+    type.forEach(
+      (t) => validateType(t, false)
+    );
     return;
   }
-  invariant(
-    typeof type === "string" || typeof type === "symbol",
-    allowArray
-      ? "Type can only be a string, a symbol, or an array of either."
-      : "Type can only be a string or a symbol."
-  );
+  invariant(typeof type === "string" || typeof type === "symbol", allowArray ? "Type can only be a string, a symbol, or an array of either." : "Type can only be a string or a symbol.");
 }
 
-// ../node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/interfaces.js
+// node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/interfaces.js
 var HandlerRole;
-(function (HandlerRole2) {
+(function(HandlerRole2) {
   HandlerRole2["SOURCE"] = "SOURCE";
   HandlerRole2["TARGET"] = "TARGET";
 })(HandlerRole || (HandlerRole = {}));
 
-// ../node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/utils/getNextUniqueId.js
+// node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/utils/getNextUniqueId.js
 var nextUniqueId = 0;
 function getNextUniqueId() {
   return nextUniqueId++;
 }
 
-// ../node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/classes/HandlerRegistryImpl.js
+// node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/classes/HandlerRegistryImpl.js
 function getNextHandlerId(role) {
   const id = getNextUniqueId().toString();
   switch (role) {
@@ -1245,10 +1104,7 @@ function mapContainsValue(map, searchValue) {
   const entries = map.entries();
   let isDone = false;
   do {
-    const {
-      done,
-      value: [, value]
-    } = entries.next();
+    const { done, value: [, value] } = entries.next();
     if (value === searchValue) {
       return true;
     }
@@ -1272,17 +1128,12 @@ var HandlerRegistryImpl = class {
     return targetId;
   }
   containsHandler(handler) {
-    return (
-      mapContainsValue(this.dragSources, handler) ||
-      mapContainsValue(this.dropTargets, handler)
-    );
+    return mapContainsValue(this.dragSources, handler) || mapContainsValue(this.dropTargets, handler);
   }
   getSource(sourceId, includePinned = false) {
     invariant(this.isSourceId(sourceId), "Expected a valid source ID.");
     const isPinned = includePinned && sourceId === this.pinnedSourceId;
-    const source = isPinned
-      ? this.pinnedSource
-      : this.dragSources.get(sourceId);
+    const source = isPinned ? this.pinnedSource : this.dragSources.get(sourceId);
     return source;
   }
   getTarget(targetId) {
@@ -1350,7 +1201,7 @@ var HandlerRegistryImpl = class {
   }
 };
 
-// ../node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/utils/equality.js
+// node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/utils/equality.js
 var strictEquality = (a, b) => a === b;
 function areCoordsEqual(offsetA, offsetB) {
   if (!offsetA && !offsetB) {
@@ -1373,7 +1224,7 @@ function areArraysEqual(a, b, isEqual = strictEquality) {
   return true;
 }
 
-// ../node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/reducers/dirtyHandlerIds.js
+// node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/reducers/dirtyHandlerIds.js
 function reduce(_state = NONE, action) {
   switch (action.type) {
     case HOVER:
@@ -1392,8 +1243,7 @@ function reduce(_state = NONE, action) {
   }
   const { targetIds = [], prevTargetIds = [] } = action.payload;
   const result = xor(targetIds, prevTargetIds);
-  const didChange =
-    result.length > 0 || !areArraysEqual(targetIds, prevTargetIds);
+  const didChange = result.length > 0 || !areArraysEqual(targetIds, prevTargetIds);
   if (!didChange) {
     return NONE;
   }
@@ -1410,7 +1260,7 @@ function reduce(_state = NONE, action) {
   return result;
 }
 
-// ../node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/reducers/dragOffset.js
+// node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/reducers/dragOffset.js
 function _defineProperty3(obj, key, value) {
   if (key in obj) {
     Object.defineProperty(obj, key, {
@@ -1429,13 +1279,11 @@ function _objectSpread3(target) {
     var source = arguments[i] != null ? arguments[i] : {};
     var ownKeys = Object.keys(source);
     if (typeof Object.getOwnPropertySymbols === "function") {
-      ownKeys = ownKeys.concat(
-        Object.getOwnPropertySymbols(source).filter(function (sym) {
-          return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-        })
-      );
+      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function(sym) {
+        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+      }));
     }
-    ownKeys.forEach(function (key) {
+    ownKeys.forEach(function(key) {
       _defineProperty3(target, key, source[key]);
     });
   }
@@ -1471,7 +1319,7 @@ function reduce2(state = initialState, action) {
   }
 }
 
-// ../node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/reducers/dragOperation.js
+// node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/reducers/dragOperation.js
 function _defineProperty4(obj, key, value) {
   if (key in obj) {
     Object.defineProperty(obj, key, {
@@ -1490,13 +1338,11 @@ function _objectSpread4(target) {
     var source = arguments[i] != null ? arguments[i] : {};
     var ownKeys = Object.keys(source);
     if (typeof Object.getOwnPropertySymbols === "function") {
-      ownKeys = ownKeys.concat(
-        Object.getOwnPropertySymbols(source).filter(function (sym) {
-          return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-        })
-      );
+      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function(sym) {
+        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+      }));
     }
-    ownKeys.forEach(function (key) {
+    ownKeys.forEach(function(key) {
       _defineProperty4(target, key, source[key]);
     });
   }
@@ -1559,7 +1405,7 @@ function reduce3(state = initialState2, action) {
   }
 }
 
-// ../node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/reducers/refCount.js
+// node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/reducers/refCount.js
 function reduce4(state = 0, action) {
   switch (action.type) {
     case ADD_SOURCE:
@@ -1573,12 +1419,12 @@ function reduce4(state = 0, action) {
   }
 }
 
-// ../node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/reducers/stateId.js
+// node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/reducers/stateId.js
 function reduce5(state = 0) {
   return state + 1;
 }
 
-// ../node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/reducers/index.js
+// node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/reducers/index.js
 function _defineProperty5(obj, key, value) {
   if (key in obj) {
     Object.defineProperty(obj, key, {
@@ -1597,13 +1443,11 @@ function _objectSpread5(target) {
     var source = arguments[i] != null ? arguments[i] : {};
     var ownKeys = Object.keys(source);
     if (typeof Object.getOwnPropertySymbols === "function") {
-      ownKeys = ownKeys.concat(
-        Object.getOwnPropertySymbols(source).filter(function (sym) {
-          return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-        })
-      );
+      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function(sym) {
+        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+      }));
     }
-    ownKeys.forEach(function (key) {
+    ownKeys.forEach(function(key) {
       _defineProperty5(target, key, source[key]);
     });
   }
@@ -1624,38 +1468,24 @@ function reduce6(state = {}, action) {
   };
 }
 
-// ../node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/createDragDropManager.js
-function createDragDropManager(
-  backendFactory,
-  globalContext = void 0,
-  backendOptions = {},
-  debugMode = false
-) {
+// node_modules/.pnpm/dnd-core@16.0.1/node_modules/dnd-core/dist/createDragDropManager.js
+function createDragDropManager(backendFactory, globalContext = void 0, backendOptions = {}, debugMode = false) {
   const store = makeStoreInstance(debugMode);
-  const monitor = new DragDropMonitorImpl(
-    store,
-    new HandlerRegistryImpl(store)
-  );
+  const monitor = new DragDropMonitorImpl(store, new HandlerRegistryImpl(store));
   const manager = new DragDropManagerImpl(store, monitor);
   const backend = backendFactory(manager, globalContext, backendOptions);
   manager.receiveBackend(backend);
   return manager;
 }
 function makeStoreInstance(debugMode) {
-  const reduxDevTools =
-    typeof window !== "undefined" && window.__REDUX_DEVTOOLS_EXTENSION__;
-  return createStore(
-    reduce6,
-    debugMode &&
-      reduxDevTools &&
-      reduxDevTools({
-        name: "dnd-core",
-        instanceId: "dnd-core"
-      })
-  );
+  const reduxDevTools = typeof window !== "undefined" && window.__REDUX_DEVTOOLS_EXTENSION__;
+  return createStore(reduce6, debugMode && reduxDevTools && reduxDevTools({
+    name: "dnd-core",
+    instanceId: "dnd-core"
+  }));
 }
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/core/DndProvider.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/core/DndProvider.js
 function _arrayLikeToArray(arr, len) {
   if (len == null || len > arr.length) len = arr.length;
   for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
@@ -1665,11 +1495,7 @@ function _arrayWithHoles(arr) {
   if (Array.isArray(arr)) return arr;
 }
 function _iterableToArrayLimit(arr, i) {
-  var _i =
-    arr == null
-      ? null
-      : (typeof Symbol !== "undefined" && arr[Symbol.iterator]) ||
-        arr["@@iterator"];
+  var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
   if (_i == null) return;
   var _arr = [];
   var _n = true;
@@ -1693,17 +1519,10 @@ function _iterableToArrayLimit(arr, i) {
   return _arr;
 }
 function _nonIterableRest() {
-  throw new TypeError(
-    "Invalid attempt to destructure non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."
-  );
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
 function _slicedToArray(arr, i) {
-  return (
-    _arrayWithHoles(arr) ||
-    _iterableToArrayLimit(arr, i) ||
-    _unsupportedIterableToArray(arr, i) ||
-    _nonIterableRest()
-  );
+  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
 }
 function _unsupportedIterableToArray(o, minLen) {
   if (!o) return;
@@ -1711,8 +1530,7 @@ function _unsupportedIterableToArray(o, minLen) {
   var n = Object.prototype.toString.call(o).slice(8, -1);
   if (n === "Object" && o.constructor) n = o.constructor.name;
   if (n === "Map" || n === "Set") return Array.from(n);
-  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))
-    return _arrayLikeToArray(o, minLen);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
 }
 var refCount = 0;
 var INSTANCE_SYM = Symbol.for("__VUE_DND_CONTEXT_INSTANCE__");
@@ -1722,41 +1540,28 @@ function isManagerProps(props) {
 function getDndContextValue(props) {
   if (isManagerProps(props)) {
     var manager = props.manager;
-    return [manager, false];
+    return [
+      manager,
+      false
+    ];
   }
-  var manager1 = createSingletonDndContext(
-    props.backend,
-    props.context,
-    props.options,
-    props.debugMode
-  );
+  var manager1 = createSingletonDndContext(props.backend, props.context, props.options, props.debugMode);
   var isGlobalInstance = !props.context;
-  return [manager1, isGlobalInstance];
+  return [
+    manager1,
+    isGlobalInstance
+  ];
 }
 function createSingletonDndContext(backend) {
-  var context =
-      arguments.length > 1 && arguments[1] !== void 0
-        ? arguments[1]
-        : getGlobalContext(),
-    options = arguments.length > 2 ? arguments[2] : void 0,
-    debugMode = arguments.length > 3 ? arguments[3] : void 0;
+  var context = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : getGlobalContext(), options = arguments.length > 2 ? arguments[2] : void 0, debugMode = arguments.length > 3 ? arguments[3] : void 0;
   var ctx = context;
   if (!ctx[INSTANCE_SYM]) {
-    ctx[INSTANCE_SYM] = createDragDropManager(
-      backend,
-      context,
-      options,
-      debugMode
-    );
+    ctx[INSTANCE_SYM] = createDragDropManager(backend, context, options, debugMode);
   }
   return ctx[INSTANCE_SYM];
 }
 function getGlobalContext() {
-  return typeof globalThis !== "undefined"
-    ? globalThis
-    : typeof global !== "undefined"
-      ? global
-      : window;
+  return typeof globalThis !== "undefined" ? globalThis : typeof global !== "undefined" ? global : window;
 }
 var DndProvider_default = defineComponent({
   name: "DndProvider",
@@ -1779,13 +1584,11 @@ var DndProvider_default = defineComponent({
   },
   setup: function setup(props, param) {
     var slots = param.slots;
-    var ref2 = _slicedToArray(getDndContextValue(props), 2),
-      manager = ref2[0],
-      isGlobalInstance = ref2[1];
+    var ref2 = _slicedToArray(getDndContextValue(props), 2), manager = ref2[0], isGlobalInstance = ref2[1];
     if (isGlobalInstance) {
       ++refCount;
     }
-    onUnmounted(function () {
+    onUnmounted(function() {
       if (isGlobalInstance) {
         var context = getGlobalContext();
         if (--refCount === 0) {
@@ -1795,19 +1598,15 @@ var DndProvider_default = defineComponent({
     });
     useDndContextProvider(manager);
     var ref1;
-    return function () {
+    return function() {
       var ref3;
-      return (ref1 =
-        (ref3 = slots.default) === null || ref3 === void 0
-          ? void 0
-          : ref3.call(slots)) !== null && ref1 !== void 0
-        ? ref1
-        : null;
+      return (ref1 = (ref3 = slots.default) === null || ref3 === void 0 ? void 0 : ref3.call(slots)) !== null && ref1 !== void 0 ? ref1 : null;
     };
   }
 });
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/core/DragPreviewImage.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/core/DragPreviewImage.js
+init_vue_demi();
 var DragPreviewImage_default = defineComponent({
   props: {
     connect: {
@@ -1820,28 +1619,28 @@ var DragPreviewImage_default = defineComponent({
     }
   },
   setup: function setup2(props) {
-    watchEffect(function () {
+    watchEffect(function() {
       if (typeof Image === "undefined") return;
       var connected = false;
       var img = new Image();
       img.src = props.src;
-      img.onload = function () {
+      img.onload = function() {
         props.connect(img);
         connected = true;
       };
-      return function () {
+      return function() {
         if (connected) {
           props.connect(null);
         }
       };
     });
-    return function () {
+    return function() {
       return null;
     };
   }
 });
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/internals/DragSourceMonitorImpl.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/internals/DragSourceMonitorImpl.js
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
@@ -1849,7 +1648,7 @@ function _classCallCheck(instance, Constructor) {
 }
 var isCallingCanDrag = false;
 var isCallingIsDragging = false;
-var DragSourceMonitorImpl = (function () {
+var DragSourceMonitorImpl = function() {
   "use strict";
   function DragSourceMonitorImpl2(manager) {
     _classCallCheck(this, DragSourceMonitorImpl2);
@@ -1864,10 +1663,7 @@ var DragSourceMonitorImpl = (function () {
     return this.sourceId;
   };
   _proto.canDrag = function canDrag() {
-    invariant(
-      !isCallingCanDrag,
-      "You may not call monitor.canDrag() inside your canDrag() implementation. Read more: http://react-dnd.github.io/react-dnd/docs/api/drag-source-monitor"
-    );
+    invariant(!isCallingCanDrag, "You may not call monitor.canDrag() inside your canDrag() implementation. Read more: http://react-dnd.github.io/react-dnd/docs/api/drag-source-monitor");
     try {
       isCallingCanDrag = true;
       return this.internalMonitor.canDragSource(this.sourceId);
@@ -1879,10 +1675,7 @@ var DragSourceMonitorImpl = (function () {
     if (!this.sourceId) {
       return false;
     }
-    invariant(
-      !isCallingIsDragging,
-      "You may not call monitor.isDragging() inside your isDragging() implementation. Read more: http://react-dnd.github.io/react-dnd/docs/api/drag-source-monitor"
-    );
+    invariant(!isCallingIsDragging, "You may not call monitor.isDragging() inside your isDragging() implementation. Read more: http://react-dnd.github.io/react-dnd/docs/api/drag-source-monitor");
     try {
       isCallingIsDragging = true;
       return this.internalMonitor.isDraggingSource(this.sourceId);
@@ -1890,10 +1683,7 @@ var DragSourceMonitorImpl = (function () {
       isCallingIsDragging = false;
     }
   };
-  _proto.subscribeToStateChange = function subscribeToStateChange(
-    listener,
-    options
-  ) {
+  _proto.subscribeToStateChange = function subscribeToStateChange(listener, options) {
     return this.internalMonitor.subscribeToStateChange(listener, options);
   };
   _proto.isDraggingSource = function isDraggingSource(sourceId) {
@@ -1935,31 +1725,29 @@ var DragSourceMonitorImpl = (function () {
   _proto.getInitialClientOffset = function getInitialClientOffset() {
     return this.internalMonitor.getInitialClientOffset();
   };
-  _proto.getInitialSourceClientOffset =
-    function getInitialSourceClientOffset() {
-      return this.internalMonitor.getInitialSourceClientOffset();
-    };
+  _proto.getInitialSourceClientOffset = function getInitialSourceClientOffset() {
+    return this.internalMonitor.getInitialSourceClientOffset();
+  };
   _proto.getSourceClientOffset = function getSourceClientOffset2() {
     return this.internalMonitor.getSourceClientOffset();
   };
   _proto.getClientOffset = function getClientOffset() {
     return this.internalMonitor.getClientOffset();
   };
-  _proto.getDifferenceFromInitialOffset =
-    function getDifferenceFromInitialOffset2() {
-      return this.internalMonitor.getDifferenceFromInitialOffset();
-    };
+  _proto.getDifferenceFromInitialOffset = function getDifferenceFromInitialOffset2() {
+    return this.internalMonitor.getDifferenceFromInitialOffset();
+  };
   return DragSourceMonitorImpl2;
-})();
+}();
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/internals/DropTargetMonitorImpl.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/internals/DropTargetMonitorImpl.js
 function _classCallCheck2(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
 var isCallingCanDrop = false;
-var DropTargetMonitorImpl = (function () {
+var DropTargetMonitorImpl = function() {
   "use strict";
   function DropTargetMonitorImpl2(manager) {
     _classCallCheck2(this, DropTargetMonitorImpl2);
@@ -1973,20 +1761,14 @@ var DropTargetMonitorImpl = (function () {
   _proto.getHandlerId = function getHandlerId() {
     return this.targetId;
   };
-  _proto.subscribeToStateChange = function subscribeToStateChange(
-    listener,
-    options
-  ) {
+  _proto.subscribeToStateChange = function subscribeToStateChange(listener, options) {
     return this.internalMonitor.subscribeToStateChange(listener, options);
   };
   _proto.canDrop = function canDrop() {
     if (!this.targetId) {
       return false;
     }
-    invariant(
-      !isCallingCanDrop,
-      "You may not call monitor.canDrop() inside your canDrop() implementation. Read more: http://react-dnd.github.io/react-dnd/docs/api/drop-target-monitor"
-    );
+    invariant(!isCallingCanDrop, "You may not call monitor.canDrop() inside your canDrop() implementation. Read more: http://react-dnd.github.io/react-dnd/docs/api/drop-target-monitor");
     try {
       isCallingCanDrop = true;
       return this.internalMonitor.canDropOnTarget(this.targetId);
@@ -2015,29 +1797,25 @@ var DropTargetMonitorImpl = (function () {
   _proto.getInitialClientOffset = function getInitialClientOffset() {
     return this.internalMonitor.getInitialClientOffset();
   };
-  _proto.getInitialSourceClientOffset =
-    function getInitialSourceClientOffset() {
-      return this.internalMonitor.getInitialSourceClientOffset();
-    };
+  _proto.getInitialSourceClientOffset = function getInitialSourceClientOffset() {
+    return this.internalMonitor.getInitialSourceClientOffset();
+  };
   _proto.getSourceClientOffset = function getSourceClientOffset2() {
     return this.internalMonitor.getSourceClientOffset();
   };
   _proto.getClientOffset = function getClientOffset() {
     return this.internalMonitor.getClientOffset();
   };
-  _proto.getDifferenceFromInitialOffset =
-    function getDifferenceFromInitialOffset2() {
-      return this.internalMonitor.getDifferenceFromInitialOffset();
-    };
+  _proto.getDifferenceFromInitialOffset = function getDifferenceFromInitialOffset2() {
+    return this.internalMonitor.getDifferenceFromInitialOffset();
+  };
   return DropTargetMonitorImpl2;
-})();
+}();
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/internals/utils.js
-var _typeof2 = function (obj) {
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/internals/utils.js
+var _typeof2 = function(obj) {
   "@swc/helpers - typeof";
-  return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol
-    ? "symbol"
-    : typeof obj;
+  return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj;
 };
 function isVNode(value) {
   return value ? value.__v_isVNode === true : false;
@@ -2049,18 +1827,13 @@ function isValidElement(element) {
   return isVNode(element) && _typeof2(element.type) !== "symbol";
 }
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/internals/wrapConnectorHooks.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/internals/wrapConnectorHooks.js
 function throwIfCompositeComponentElement() {
-  throw new Error(
-    "Only native element nodes can now be passed to Vue DnD connectors.You can either wrap Component into a <div>, or turn it into a drag source or a drop target itself."
-  );
+  throw new Error("Only native element nodes can now be passed to Vue DnD connectors.You can either wrap Component into a <div>, or turn it into a drag source or a drop target itself.");
 }
 function wrapHookToRecognizeElement(hook) {
-  return function () {
-    var elementOrNode =
-        arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : null,
-      options =
-        arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : null;
+  return function() {
+    var elementOrNode = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : null, options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : null;
     if (isVueSkipInstance(elementOrNode)) {
       throwIfCompositeComponentElement();
     }
@@ -2073,13 +1846,13 @@ function wrapHookToRecognizeElement(hook) {
 }
 function wrapConnectorHooks(hooks) {
   var wrappedHooks = {};
-  Object.keys(hooks).forEach(function (key) {
+  Object.keys(hooks).forEach(function(key) {
     var hook = hooks[key];
     if (key.endsWith("Ref")) {
       wrappedHooks[key] = hooks[key];
     } else {
       var wrappedHook = wrapHookToRecognizeElement(hook);
-      wrappedHooks[key] = function () {
+      wrappedHooks[key] = function() {
         return wrappedHook;
       };
     }
@@ -2087,11 +1860,9 @@ function wrapConnectorHooks(hooks) {
   return wrappedHooks;
 }
 
-// ../node_modules/.pnpm/@react-dnd+shallowequal@4.0.2/node_modules/@react-dnd/shallowequal/dist/index.js
+// node_modules/.pnpm/@react-dnd+shallowequal@4.0.2/node_modules/@react-dnd/shallowequal/dist/index.js
 function shallowEqual(objA, objB, compare, compareContext) {
-  let compareResult = compare
-    ? compare.call(compareContext, objA, objB)
-    : void 0;
+  let compareResult = compare ? compare.call(compareContext, objA, objB) : void 0;
   if (compareResult !== void 0) {
     return !!compareResult;
   }
@@ -2114,20 +1885,15 @@ function shallowEqual(objA, objB, compare, compareContext) {
     }
     const valueA = objA[key];
     const valueB = objB[key];
-    compareResult = compare
-      ? compare.call(compareContext, valueA, valueB, key)
-      : void 0;
-    if (
-      compareResult === false ||
-      (compareResult === void 0 && valueA !== valueB)
-    ) {
+    compareResult = compare ? compare.call(compareContext, valueA, valueB, key) : void 0;
+    if (compareResult === false || compareResult === void 0 && valueA !== valueB) {
       return false;
     }
   }
   return true;
 }
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/internals/SourceConnector.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/internals/SourceConnector.js
 function _classCallCheck3(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
@@ -2147,19 +1913,19 @@ function _createClass(Constructor, protoProps, staticProps) {
   if (staticProps) _defineProperties(Constructor, staticProps);
   return Constructor;
 }
-var SourceConnector = (function () {
+var SourceConnector = function() {
   "use strict";
   function SourceConnector2(backend) {
     var _this = this;
     _classCallCheck3(this, SourceConnector2);
     this.hooks = wrapConnectorHooks({
-      dragSource: function (node, options) {
+      dragSource: function(node, options) {
         _this.clearDragSource();
         _this.dragSourceOptions = options || null;
         _this.dragSourceNode = node;
         _this.reconnectDragSource();
       },
-      dragPreview: function (node, options) {
+      dragPreview: function(node, options) {
         _this.clearDragPreview();
         _this.dragPreviewOptions = options || null;
         _this.dragPreviewNode = node;
@@ -2190,10 +1956,7 @@ var SourceConnector = (function () {
   };
   _proto.reconnectDragSource = function reconnectDragSource() {
     var dragSource = this.dragSource;
-    var didChange =
-      this.didHandlerIdChange() ||
-      this.didConnectedDragSourceChange() ||
-      this.didDragSourceOptionsChange();
+    var didChange = this.didHandlerIdChange() || this.didConnectedDragSourceChange() || this.didDragSourceOptionsChange();
     if (didChange) {
       this.disconnectDragSource();
     }
@@ -2208,23 +1971,14 @@ var SourceConnector = (function () {
       this.lastConnectedHandlerId = this.handlerId;
       this.lastConnectedDragSource = dragSource;
       this.lastConnectedDragSourceOptions = this.dragSourceOptions;
-      this.dragSourceUnsubscribe = this.backend.connectDragSource(
-        this.handlerId,
-        dragSource,
-        this.dragSourceOptions
-      );
+      this.dragSourceUnsubscribe = this.backend.connectDragSource(this.handlerId, dragSource, this.dragSourceOptions);
     }
     return didChange;
   };
   _proto.reconnectDragPreview = function reconnectDragPreview() {
-    var forceDidChange =
-      arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : false;
+    var forceDidChange = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : false;
     var dragPreview = this.dragPreview;
-    var didChange =
-      forceDidChange ||
-      this.didHandlerIdChange() ||
-      this.didConnectedDragPreviewChange() ||
-      this.didDragPreviewOptionsChange();
+    var didChange = forceDidChange || this.didHandlerIdChange() || this.didConnectedDragPreviewChange() || this.didDragPreviewOptionsChange();
     if (didChange) {
       this.disconnectDragPreview();
     }
@@ -2239,35 +1993,23 @@ var SourceConnector = (function () {
       this.lastConnectedHandlerId = this.handlerId;
       this.lastConnectedDragPreview = dragPreview;
       this.lastConnectedDragPreviewOptions = this.dragPreviewOptions;
-      this.dragPreviewUnsubscribe = this.backend.connectDragPreview(
-        this.handlerId,
-        dragPreview,
-        this.dragPreviewOptions
-      );
+      this.dragPreviewUnsubscribe = this.backend.connectDragPreview(this.handlerId, dragPreview, this.dragPreviewOptions);
     }
   };
   _proto.didHandlerIdChange = function didHandlerIdChange() {
     return this.lastConnectedHandlerId !== this.handlerId;
   };
-  _proto.didConnectedDragSourceChange =
-    function didConnectedDragSourceChange() {
-      return this.lastConnectedDragSource !== this.dragSource;
-    };
-  _proto.didConnectedDragPreviewChange =
-    function didConnectedDragPreviewChange() {
-      return this.lastConnectedDragPreview !== this.dragPreview;
-    };
+  _proto.didConnectedDragSourceChange = function didConnectedDragSourceChange() {
+    return this.lastConnectedDragSource !== this.dragSource;
+  };
+  _proto.didConnectedDragPreviewChange = function didConnectedDragPreviewChange() {
+    return this.lastConnectedDragPreview !== this.dragPreview;
+  };
   _proto.didDragSourceOptionsChange = function didDragSourceOptionsChange() {
-    return !shallowEqual(
-      this.lastConnectedDragSourceOptions,
-      this.dragSourceOptions
-    );
+    return !shallowEqual(this.lastConnectedDragSourceOptions, this.dragSourceOptions);
   };
   _proto.didDragPreviewOptionsChange = function didDragPreviewOptionsChange() {
-    return !shallowEqual(
-      this.lastConnectedDragPreviewOptions,
-      this.dragPreviewOptions
-    );
+    return !shallowEqual(this.lastConnectedDragPreviewOptions, this.dragPreviewOptions);
   };
   _proto.disconnectDragSource = function disconnectDragSource() {
     if (this.dragSourceUnsubscribe) {
@@ -2327,9 +2069,10 @@ var SourceConnector = (function () {
     }
   ]);
   return SourceConnector2;
-})();
+}();
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/internals/TargetConnector.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/internals/TargetConnector.js
+init_vue_demi();
 function _classCallCheck4(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
@@ -2349,13 +2092,13 @@ function _createClass2(Constructor, protoProps, staticProps) {
   if (staticProps) _defineProperties2(Constructor, staticProps);
   return Constructor;
 }
-var TargetConnector = (function () {
+var TargetConnector = function() {
   "use strict";
   function TargetConnector2(backend) {
     var _this = this;
     _classCallCheck4(this, TargetConnector2);
     this.hooks = wrapConnectorHooks({
-      dropTarget: function (node, options) {
+      dropTarget: function(node, options) {
         _this.clearDropTarget();
         _this.dropTargetOptions = options;
         if (isRef(node)) {
@@ -2376,10 +2119,7 @@ var TargetConnector = (function () {
   }
   var _proto = TargetConnector2.prototype;
   _proto.reconnect = function reconnect() {
-    var didChange =
-      this.didHandlerIdChange() ||
-      this.didDropTargetChange() ||
-      this.didOptionsChange();
+    var didChange = this.didHandlerIdChange() || this.didDropTargetChange() || this.didOptionsChange();
     if (didChange) {
       this.disconnectDropTarget();
     }
@@ -2395,11 +2135,7 @@ var TargetConnector = (function () {
       this.lastConnectedHandlerId = this.handlerId;
       this.lastConnectedDropTarget = dropTarget;
       this.lastConnectedDropTargetOptions = this.dropTargetOptions;
-      this.unsubscribeDropTarget = this.backend.connectDropTarget(
-        this.handlerId,
-        dropTarget,
-        this.dropTargetOptions
-      );
+      this.unsubscribeDropTarget = this.backend.connectDropTarget(this.handlerId, dropTarget, this.dropTargetOptions);
     }
   };
   _proto.receiveHandlerId = function receiveHandlerId(newHandlerId) {
@@ -2416,10 +2152,7 @@ var TargetConnector = (function () {
     return this.lastConnectedDropTarget !== this.dropTarget;
   };
   _proto.didOptionsChange = function didOptionsChange() {
-    return !shallowEqual(
-      this.lastConnectedDropTargetOptions,
-      this.dropTargetOptions
-    );
+    return !shallowEqual(this.lastConnectedDropTargetOptions, this.dropTargetOptions);
   };
   _proto.disconnectDropTarget = function disconnectDropTarget() {
     if (this.unsubscribeDropTarget) {
@@ -2450,23 +2183,21 @@ var TargetConnector = (function () {
     {
       key: "dropTarget",
       get: function get2() {
-        return (
-          this.dropTargetNode ||
-          (this.dropTargetRef && this.dropTargetRef.value)
-        );
+        return this.dropTargetNode || this.dropTargetRef && this.dropTargetRef.value;
       }
     }
   ]);
   return TargetConnector2;
-})();
+}();
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/internals/registration.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/internals/registration.js
+init_vue_demi();
 function registerTarget(type, target, manager) {
   var registry = unref(manager).getRegistry();
   var targetId = registry.addTarget(unref(type), unref(target));
   return [
     targetId,
-    function () {
+    function() {
       return registry.removeTarget(targetId);
     }
   ];
@@ -2476,19 +2207,19 @@ function registerSource(type, source, manager) {
   var sourceId = registry.addSource(type, source);
   return [
     sourceId,
-    function () {
+    function() {
       return registry.removeSource(sourceId);
     }
   ];
 }
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrag/DragSourceImpl.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrag/DragSourceImpl.js
 function _classCallCheck5(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-var DragSourceImpl = (function () {
+var DragSourceImpl = function() {
   "use strict";
   function DragSourceImpl2(spec, monitor, connector) {
     _classCallCheck5(this, DragSourceImpl2);
@@ -2525,9 +2256,7 @@ var DragSourceImpl = (function () {
     var spec = this.spec;
     var monitor = this.monitor;
     var isDragging1 = spec.isDragging;
-    return isDragging1
-      ? isDragging1(monitor)
-      : target === globalMonitor.getSourceId();
+    return isDragging1 ? isDragging1(monitor) : target === globalMonitor.getSourceId();
   };
   _proto.endDrag = function endDrag() {
     var spec = this.spec;
@@ -2540,36 +2269,39 @@ var DragSourceImpl = (function () {
     connector.reconnect();
   };
   return DragSourceImpl2;
-})();
+}();
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrag/useDragSource.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrag/useDragSource.js
+init_vue_demi();
 function useDragSource(spec, monitor, connector) {
-  var handler = computed(function () {
+  var handler = computed(function() {
     return new DragSourceImpl(unref(spec), unref(monitor), unref(connector));
   });
-  watchEffect(function () {
+  watchEffect(function() {
     handler.value.spec = unref(spec);
   });
   return handler;
 }
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDragDropManager.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDragDropManager.js
 function useDragDropManager() {
   var dragDropManager = useDndContextInjector();
   invariant(dragDropManager != null, "Expected drag drop context");
   return dragDropManager;
 }
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrag/useDragType.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrag/useDragType.js
+init_vue_demi();
 function useDragType(spec) {
-  return computed(function () {
+  return computed(function() {
     var result = unref(spec).type;
     invariant(result != null, "spec.type must be defined");
     return result;
   });
 }
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrag/useRegisteredDragSource.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrag/useRegisteredDragSource.js
+init_vue_demi();
 function _arrayLikeToArray2(arr, len) {
   if (len == null || len > arr.length) len = arr.length;
   for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
@@ -2579,11 +2311,7 @@ function _arrayWithHoles2(arr) {
   if (Array.isArray(arr)) return arr;
 }
 function _iterableToArrayLimit2(arr, i) {
-  var _i =
-    arr == null
-      ? null
-      : (typeof Symbol !== "undefined" && arr[Symbol.iterator]) ||
-        arr["@@iterator"];
+  var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
   if (_i == null) return;
   var _arr = [];
   var _n = true;
@@ -2607,17 +2335,10 @@ function _iterableToArrayLimit2(arr, i) {
   return _arr;
 }
 function _nonIterableRest2() {
-  throw new TypeError(
-    "Invalid attempt to destructure non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."
-  );
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
 function _slicedToArray2(arr, i) {
-  return (
-    _arrayWithHoles2(arr) ||
-    _iterableToArrayLimit2(arr, i) ||
-    _unsupportedIterableToArray2(arr, i) ||
-    _nonIterableRest2()
-  );
+  return _arrayWithHoles2(arr) || _iterableToArrayLimit2(arr, i) || _unsupportedIterableToArray2(arr, i) || _nonIterableRest2();
 }
 function _unsupportedIterableToArray2(o, minLen) {
   if (!o) return;
@@ -2625,8 +2346,7 @@ function _unsupportedIterableToArray2(o, minLen) {
   var n = Object.prototype.toString.call(o).slice(8, -1);
   if (n === "Object" && o.constructor) n = o.constructor.name;
   if (n === "Map" || n === "Set") return Array.from(n);
-  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))
-    return _arrayLikeToArray2(o, minLen);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray2(o, minLen);
 }
 function useRegisteredDragSource(spec, monitor, connector) {
   var manager = useDragDropManager();
@@ -2634,12 +2354,7 @@ function useRegisteredDragSource(spec, monitor, connector) {
   var itemType = useDragType(spec);
   watchEffect(function registerDragSource(onCleanup) {
     if (unref(itemType) != null) {
-      var ref2 = _slicedToArray2(
-          registerSource(unref(itemType), unref(handler), unref(manager)),
-          2
-        ),
-        handlerId = ref2[0],
-        unregister = ref2[1];
+      var ref2 = _slicedToArray2(registerSource(unref(itemType), unref(handler), unref(manager)), 2), handlerId = ref2[0], unregister = ref2[1];
       unref(monitor).receiveHandlerId(handlerId);
       unref(connector).receiveHandlerId(handlerId);
       onCleanup(unregister);
@@ -2648,49 +2363,53 @@ function useRegisteredDragSource(spec, monitor, connector) {
   });
 }
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useOptionalFactory.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useOptionalFactory.js
+init_vue_demi();
 function useOptionalFactory(arg) {
-  return computed(function () {
+  return computed(function() {
     return typeof arg === "function" ? arg() : arg;
   });
 }
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrag/useDragSourceMonitor.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrag/useDragSourceMonitor.js
+init_vue_demi();
 function useDragSourceMonitor() {
   var manager = useDragDropManager();
-  return computed(function () {
+  return computed(function() {
     return new DragSourceMonitorImpl(unref(manager));
   });
 }
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrag/useDragSourceConnector.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrag/useDragSourceConnector.js
+init_vue_demi();
 function useDragSourceConnector(dragSourceOptions, dragPreviewOptions) {
   var manager = useDragDropManager();
-  var connector = computed(function () {
+  var connector = computed(function() {
     return new SourceConnector(unref(manager).getBackend());
   });
-  watchEffect(function (onCleanup) {
+  watchEffect(function(onCleanup) {
     connector.value.dragSourceOptions = unref(dragSourceOptions) || null;
     unref(connector).reconnect();
-    onCleanup(function () {
+    onCleanup(function() {
       connector.value.disconnectDragSource();
     });
   });
-  watchEffect(function (onCleanup) {
+  watchEffect(function(onCleanup) {
     connector.value.dragPreviewOptions = unref(dragPreviewOptions) || null;
     unref(connector).reconnect();
-    onCleanup(function () {
+    onCleanup(function() {
       connector.value.disconnectDragPreview();
     });
   });
   return connector;
 }
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useCollector.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useCollector.js
 var import_fast_deep_equal = __toESM(require_fast_deep_equal());
+init_vue_demi();
 function useCollector(monitor, collect, onUpdate) {
   var collected = ref(unref(collect)(unref(monitor)));
-  var updateCollected = function () {
+  var updateCollected = function() {
     var nextValue = unref(collect)(unref(monitor));
     if (!(0, import_fast_deep_equal.default)(collected.value, nextValue)) {
       collected.value = nextValue;
@@ -2700,10 +2419,14 @@ function useCollector(monitor, collect, onUpdate) {
     }
   };
   watchEffect(updateCollected);
-  return [collected, updateCollected];
+  return [
+    collected,
+    updateCollected
+  ];
 }
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useMonitorOutput.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useMonitorOutput.js
+init_vue_demi();
 function _arrayLikeToArray3(arr, len) {
   if (len == null || len > arr.length) len = arr.length;
   for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
@@ -2713,11 +2436,7 @@ function _arrayWithHoles3(arr) {
   if (Array.isArray(arr)) return arr;
 }
 function _iterableToArrayLimit3(arr, i) {
-  var _i =
-    arr == null
-      ? null
-      : (typeof Symbol !== "undefined" && arr[Symbol.iterator]) ||
-        arr["@@iterator"];
+  var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
   if (_i == null) return;
   var _arr = [];
   var _n = true;
@@ -2741,17 +2460,10 @@ function _iterableToArrayLimit3(arr, i) {
   return _arr;
 }
 function _nonIterableRest3() {
-  throw new TypeError(
-    "Invalid attempt to destructure non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."
-  );
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
 function _slicedToArray3(arr, i) {
-  return (
-    _arrayWithHoles3(arr) ||
-    _iterableToArrayLimit3(arr, i) ||
-    _unsupportedIterableToArray3(arr, i) ||
-    _nonIterableRest3()
-  );
+  return _arrayWithHoles3(arr) || _iterableToArrayLimit3(arr, i) || _unsupportedIterableToArray3(arr, i) || _nonIterableRest3();
 }
 function _unsupportedIterableToArray3(o, minLen) {
   if (!o) return;
@@ -2759,53 +2471,52 @@ function _unsupportedIterableToArray3(o, minLen) {
   var n = Object.prototype.toString.call(o).slice(8, -1);
   if (n === "Object" && o.constructor) n = o.constructor.name;
   if (n === "Map" || n === "Set") return Array.from(n);
-  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))
-    return _arrayLikeToArray3(o, minLen);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray3(o, minLen);
 }
 function useMonitorOutput(monitor, collect, onCollect) {
-  var ref2 = _slicedToArray3(useCollector(monitor, collect, onCollect), 2),
-    collected = ref2[0],
-    updateCollected = ref2[1];
+  var ref2 = _slicedToArray3(useCollector(monitor, collect, onCollect), 2), collected = ref2[0], updateCollected = ref2[1];
   watchEffect(function subscribeToMonitorStateChange(onCleanup) {
     var handlerId = unref(monitor).getHandlerId();
     if (handlerId == null) {
       return;
     }
-    onCleanup(
-      unref(monitor).subscribeToStateChange(updateCollected, {
-        handlerIds: [handlerId]
-      })
-    );
+    onCleanup(unref(monitor).subscribeToStateChange(updateCollected, {
+      handlerIds: [
+        handlerId
+      ]
+    }));
   });
   return collected;
 }
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useCollectedProps.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useCollectedProps.js
+init_vue_demi();
 function useCollectedProps(collector, monitor, connector) {
-  var defaultCollector = function () {
+  var defaultCollector = function() {
     return {};
   };
-  return useMonitorOutput(monitor, collector || defaultCollector, function () {
+  return useMonitorOutput(monitor, collector || defaultCollector, function() {
     return unref(connector).reconnect();
   });
 }
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useConnector.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrag/connectors.js
+init_vue_demi();
+
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useConnector.js
+init_vue_demi();
 var import_fast_deep_equal2 = __toESM(require_fast_deep_equal());
 function useConnector(callback, defaultOptions) {
   var _state = reactive({
     el: null,
     options: unref(defaultOptions)
   });
-  watchEffect(
-    function () {
-      callback(_state);
-    },
-    {
-      flush: "post"
-    }
-  );
-  var connector = function (element, options) {
+  watchEffect(function() {
+    callback(_state);
+  }, {
+    flush: "post"
+  });
+  var connector = function(element, options) {
     set(_state, "el", element);
     var _options = unref(defaultOptions) || options;
     if (!(0, import_fast_deep_equal2.default)(_state.options, _options)) {
@@ -2816,75 +2527,63 @@ function useConnector(callback, defaultOptions) {
   return connector;
 }
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrag/connectors.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrag/connectors.js
 function useConnectDragSource(connector, spec) {
-  return useConnector(
-    function (state) {
-      unref(connector).hooks.dragSource()(state.el, state.options);
-    },
-    computed(function () {
-      return unref(spec).options;
-    })
-  );
+  return useConnector(function(state) {
+    unref(connector).hooks.dragSource()(state.el, state.options);
+  }, computed(function() {
+    return unref(spec).options;
+  }));
 }
 function useConnectDragPreview(connector, spec) {
-  return useConnector(
-    function (state) {
-      unref(connector).hooks.dragPreview()(state.el, state.options);
-    },
-    computed(function () {
-      return unref(spec).previewOptions;
-    })
-  );
+  return useConnector(function(state) {
+    unref(connector).hooks.dragPreview()(state.el, state.options);
+  }, computed(function() {
+    return unref(spec).previewOptions;
+  }));
 }
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrag/useDrag.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrag/useDrag.js
+init_vue_demi();
 function useDrag(specArg) {
   var spec = useOptionalFactory(specArg);
   var monitor = useDragSourceMonitor();
-  var connector = useDragSourceConnector(
-    computed(function () {
-      return unref(spec).options;
-    }),
-    computed(function () {
-      return unref(spec).previewOptions;
-    })
-  );
+  var connector = useDragSourceConnector(computed(function() {
+    return unref(spec).options;
+  }), computed(function() {
+    return unref(spec).previewOptions;
+  }));
   useRegisteredDragSource(spec, monitor, connector);
   return [
-    useCollectedProps(
-      computed(function () {
-        return (
-          unref(spec).collect ||
-          function () {
-            return {};
-          }
-        );
-      }),
-      monitor,
-      connector
-    ),
+    useCollectedProps(computed(function() {
+      return unref(spec).collect || function() {
+        return {};
+      };
+    }), monitor, connector),
     useConnectDragSource(connector, spec),
     useConnectDragPreview(connector, spec)
   ];
 }
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrop/useAccept.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrop/useAccept.js
+init_vue_demi();
 function useAccept(spec) {
-  return computed(function () {
+  return computed(function() {
     var accept = unref(spec).accept;
     invariant(accept != null, "accept must be defined");
-    return Array.isArray(accept) ? accept : [accept];
+    return Array.isArray(accept) ? accept : [
+      accept
+    ];
   });
 }
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrop/DropTargetImpl.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrop/DropTargetImpl.js
 function _classCallCheck6(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-var DropTargetImpl = (function () {
+var DropTargetImpl = function() {
   "use strict";
   function DropTargetImpl2(spec, monitor) {
     _classCallCheck6(this, DropTargetImpl2);
@@ -2913,20 +2612,22 @@ var DropTargetImpl = (function () {
     return;
   };
   return DropTargetImpl2;
-})();
+}();
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrop/useDropTarget.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrop/useDropTarget.js
+init_vue_demi();
 function useDropTarget(spec, monitor) {
-  var dropTarget = computed(function () {
+  var dropTarget = computed(function() {
     return new DropTargetImpl(unref(spec), unref(monitor));
   });
-  watchEffect(function () {
+  watchEffect(function() {
     dropTarget.value.spec = unref(spec);
   });
   return dropTarget;
 }
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrop/useRegisteredDropTarget.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrop/useRegisteredDropTarget.js
+init_vue_demi();
 function _arrayLikeToArray4(arr, len) {
   if (len == null || len > arr.length) len = arr.length;
   for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
@@ -2936,11 +2637,7 @@ function _arrayWithHoles4(arr) {
   if (Array.isArray(arr)) return arr;
 }
 function _iterableToArrayLimit4(arr, i) {
-  var _i =
-    arr == null
-      ? null
-      : (typeof Symbol !== "undefined" && arr[Symbol.iterator]) ||
-        arr["@@iterator"];
+  var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
   if (_i == null) return;
   var _arr = [];
   var _n = true;
@@ -2964,17 +2661,10 @@ function _iterableToArrayLimit4(arr, i) {
   return _arr;
 }
 function _nonIterableRest4() {
-  throw new TypeError(
-    "Invalid attempt to destructure non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."
-  );
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
 function _slicedToArray4(arr, i) {
-  return (
-    _arrayWithHoles4(arr) ||
-    _iterableToArrayLimit4(arr, i) ||
-    _unsupportedIterableToArray4(arr, i) ||
-    _nonIterableRest4()
-  );
+  return _arrayWithHoles4(arr) || _iterableToArrayLimit4(arr, i) || _unsupportedIterableToArray4(arr, i) || _nonIterableRest4();
 }
 function _unsupportedIterableToArray4(o, minLen) {
   if (!o) return;
@@ -2982,87 +2672,77 @@ function _unsupportedIterableToArray4(o, minLen) {
   var n = Object.prototype.toString.call(o).slice(8, -1);
   if (n === "Object" && o.constructor) n = o.constructor.name;
   if (n === "Map" || n === "Set") return Array.from(n);
-  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))
-    return _arrayLikeToArray4(o, minLen);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray4(o, minLen);
 }
 function useRegisteredDropTarget(spec, monitor, connector) {
   var manager = useDragDropManager();
   var dropTarget = useDropTarget(spec, monitor);
   var accept = useAccept(spec);
   watchEffect(function registerDropTarget(onCleanup) {
-    var ref2 = _slicedToArray4(registerTarget(accept, dropTarget, manager), 2),
-      handlerId = ref2[0],
-      unregister = ref2[1];
+    var ref2 = _slicedToArray4(registerTarget(accept, dropTarget, manager), 2), handlerId = ref2[0], unregister = ref2[1];
     unref(monitor).receiveHandlerId(handlerId);
     unref(connector).receiveHandlerId(handlerId);
     onCleanup(unregister);
   });
 }
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrop/useDropTargetMonitor.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrop/useDropTargetMonitor.js
+init_vue_demi();
 function useDropTargetMonitor() {
   var manager = useDragDropManager();
-  return computed(function () {
+  return computed(function() {
     return new DropTargetMonitorImpl(unref(manager));
   });
 }
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrop/useDropTargetConnector.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrop/useDropTargetConnector.js
+init_vue_demi();
 function useDropTargetConnector(options) {
   var manager = useDragDropManager();
-  var connector = computed(function () {
+  var connector = computed(function() {
     return new TargetConnector(unref(manager).getBackend());
   });
-  watchEffect(function (onCleanup) {
+  watchEffect(function(onCleanup) {
     connector.value.dropTargetOptions = unref(options) || null;
     connector.value.reconnect();
-    onCleanup(function () {
+    onCleanup(function() {
       return connector.value.disconnectDropTarget();
     });
   });
   return connector;
 }
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrop/connectors.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrop/connectors.js
+init_vue_demi();
 function useConnectDropTarget(connector, spec) {
-  return useConnector(
-    function (state) {
-      unref(connector).hooks.dropTarget()(state.el, state.options);
-    },
-    computed(function () {
-      return unref(spec).options;
-    })
-  );
+  return useConnector(function(state) {
+    unref(connector).hooks.dropTarget()(state.el, state.options);
+  }, computed(function() {
+    return unref(spec).options;
+  }));
 }
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrop/useDrop.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDrop/useDrop.js
+init_vue_demi();
 function useDrop(specArg) {
   var spec = useOptionalFactory(specArg);
   var monitor = useDropTargetMonitor();
-  var connector = useDropTargetConnector(
-    computed(function () {
-      return unref(spec).options;
-    })
-  );
+  var connector = useDropTargetConnector(computed(function() {
+    return unref(spec).options;
+  }));
   useRegisteredDropTarget(spec, monitor, connector);
   return [
-    useCollectedProps(
-      computed(function () {
-        return (
-          unref(spec).collect ||
-          function () {
-            return {};
-          }
-        );
-      }),
-      monitor,
-      connector
-    ),
+    useCollectedProps(computed(function() {
+      return unref(spec).collect || function() {
+        return {};
+      };
+    }), monitor, connector),
     useConnectDropTarget(connector, spec)
   ];
 }
 
-// ../node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDragLayer.js
+// node_modules/.pnpm/vue3-dnd@2.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/vue3-dnd/dist/esm/hooks/useDragLayer.js
+init_vue_demi();
 function _arrayLikeToArray5(arr, len) {
   if (len == null || len > arr.length) len = arr.length;
   for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
@@ -3072,11 +2752,7 @@ function _arrayWithHoles5(arr) {
   if (Array.isArray(arr)) return arr;
 }
 function _iterableToArrayLimit5(arr, i) {
-  var _i =
-    arr == null
-      ? null
-      : (typeof Symbol !== "undefined" && arr[Symbol.iterator]) ||
-        arr["@@iterator"];
+  var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
   if (_i == null) return;
   var _arr = [];
   var _n = true;
@@ -3100,17 +2776,10 @@ function _iterableToArrayLimit5(arr, i) {
   return _arr;
 }
 function _nonIterableRest5() {
-  throw new TypeError(
-    "Invalid attempt to destructure non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."
-  );
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
 function _slicedToArray5(arr, i) {
-  return (
-    _arrayWithHoles5(arr) ||
-    _iterableToArrayLimit5(arr, i) ||
-    _unsupportedIterableToArray5(arr, i) ||
-    _nonIterableRest5()
-  );
+  return _arrayWithHoles5(arr) || _iterableToArrayLimit5(arr, i) || _unsupportedIterableToArray5(arr, i) || _nonIterableRest5();
 }
 function _unsupportedIterableToArray5(o, minLen) {
   if (!o) return;
@@ -3118,21 +2787,18 @@ function _unsupportedIterableToArray5(o, minLen) {
   var n = Object.prototype.toString.call(o).slice(8, -1);
   if (n === "Object" && o.constructor) n = o.constructor.name;
   if (n === "Map" || n === "Set") return Array.from(n);
-  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))
-    return _arrayLikeToArray5(o, minLen);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray5(o, minLen);
 }
 function useDragLayer(collect) {
   var dragDropManager = useDragDropManager();
-  var monitor = computed(function () {
+  var monitor = computed(function() {
     return unref(dragDropManager).getMonitor();
   });
-  var ref2 = _slicedToArray5(useCollector(monitor, collect), 2),
-    collected = ref2[0],
-    updateCollected = ref2[1];
-  watchEffect(function (onCleanup) {
+  var ref2 = _slicedToArray5(useCollector(monitor, collect), 2), collected = ref2[0], updateCollected = ref2[1];
+  watchEffect(function(onCleanup) {
     onCleanup(monitor.value.subscribeToOffsetChange(updateCollected));
   });
-  watchEffect(function (onCleanup) {
+  watchEffect(function(onCleanup) {
     onCleanup(monitor.value.subscribeToStateChange(updateCollected));
   });
   return collected;

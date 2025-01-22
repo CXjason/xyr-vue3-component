@@ -32,7 +32,7 @@ const currentLink = computed(() => {
 <template>
   <div class="navbar-wrapper">
     <div class="header-container">
-      <div class="logo-container">lonsdor-vue3-component</div>
+      <div class="logo-container">xyr-vue3-component</div>
       <div class="content">
         <VPNavbarSearch class="search" :options="theme.agolia" multilang />
         <VPNavbarMenu class="menu" />

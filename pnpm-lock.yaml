@@ -14,6 +14,9 @@ importers:
       '@pureadmin/utils':
         specifier: ^2.4.8
         version: 2.4.8(vue@3.5.12(typescript@5.6.3))
+      '@smallwei/avue':
+        specifier: ^3.6.2
+        version: 3.6.2(element-plus@2.8.5(vue@3.5.12(typescript@5.6.3)))(vue@3.5.12(typescript@5.6.3))
       clipboard-copy:
         specifier: ^4.0.1
         version: 4.0.1
@@ -1747,6 +1750,12 @@ packages:
   '@shikijs/vscode-textmate@9.3.0':
     resolution: {integrity: sha512-jn7/7ky30idSkd/O5yDBfAnVt+JJpepofP/POZ1iMOxK59cOfqIgg/Dj0eFsjOTMw+4ycJN0uhZH/Eb0bs/EUA==}
 
+  '@smallwei/avue@3.6.2':
+    resolution: {integrity: sha512-Ifkt0o7KLsAMptfoNMG7qYS86OL2pEet761wWZyZGu8e48wuNNPOfqx5jnibGjx2oIoKtYUFh7tFdllOCth2EQ==}
+    peerDependencies:
+      element-plus: '>=2.2.0'
+      vue: '>=3.2.0'
+
   '@surma/rollup-plugin-off-main-thread@2.2.3':
     resolution: {integrity: sha512-lR8q/9W7hZpMWweNiAKU7NQerBnzQQLvi8qnTDU/fxItPhtZVMbPV3lbCwjhIlNBe9Bbr5V+KHshvWmVSG9cxQ==}
 
@@ -2688,6 +2697,9 @@ packages:
     peerDependenciesMeta:
       typescript:
         optional: true
+
+  countup.js@1.9.3:
+    resolution: {integrity: sha512-UHf2P/mFKaESqdPq+UdBJm/1y8lYdlcDd0nTZHNC8cxWoJwZr1Eldm1PpWui446vDl5Pd8PtRYkr3q6K4+Qa5A==}
 
   cross-spawn@7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
@@ -6989,6 +7001,15 @@ snapshots:
 
   '@shikijs/vscode-textmate@9.3.0': {}
 
+  '@smallwei/avue@3.6.2(element-plus@2.8.5(vue@3.5.12(typescript@5.6.3)))(vue@3.5.12(typescript@5.6.3))':
+    dependencies:
+      '@element-plus/icons-vue': 2.3.1(vue@3.5.12(typescript@5.6.3))
+      countup.js: 1.9.3
+      dayjs: 1.11.13
+      element-plus: 2.8.5(vue@3.5.12(typescript@5.6.3))
+      lodash: 4.17.21
+      vue: 3.5.12(typescript@5.6.3)
+
   '@surma/rollup-plugin-off-main-thread@2.2.3':
     dependencies:
       ejs: 3.1.10
@@ -8267,6 +8288,8 @@ snapshots:
       parse-json: 5.2.0
     optionalDependencies:
       typescript: 5.6.3
+
+  countup.js@1.9.3: {}
 
   cross-spawn@7.0.3:
     dependencies:

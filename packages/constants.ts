@@ -1,1 +1,1 @@
-export const INSTALLED_KEY = "lonsdor-vue3-component";
+export const INSTALLED_KEY = "xyr-vue3-component";
