@@ -1,11 +1,18 @@
 <template>
-  <div>
-    <xyr-avue-curd ref="avueCurdRef" row-key="id" :data="data" :option="option">
-      <template #name="{ row }">
-        {{ row.name + "_2" }}
-      </template>
-    </xyr-avue-curd>
-  </div>
+  <ClientOnly>
+    <div>
+      <xyr-avue-curd
+        ref="avueCurdRef"
+        row-key="id"
+        :data="data"
+        :option="option"
+      >
+        <template #name="{ row }">
+          {{ row.name + "_2" }}
+        </template>
+      </xyr-avue-curd>
+    </div>
+  </ClientOnly>
 </template>
 
 <script setup lang="ts">

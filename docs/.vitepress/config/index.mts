@@ -47,7 +47,8 @@ languages.forEach(lang => {
 });
 
 const config: UserConfig = {
-  title: "Element Plus",
+  base: "/xyr-vue3-component/",
+  title: "xyr vue3 component",
   description: "A Vue 3 based component library for designers and developers",
   lastUpdated: true,
   head,

@@ -28,6 +28,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
 
   return {
+    base: "./",
     server: {
       host: true,
       port: 5175,
