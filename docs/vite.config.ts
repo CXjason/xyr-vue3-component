@@ -3,7 +3,6 @@ import Inspect from "vite-plugin-inspect";
 import { defineConfig, loadEnv } from "vite";
 import VueMacros from "unplugin-vue-macros/vite";
 import mkcert from "vite-plugin-mkcert";
-import glob from "fast-glob";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import Components from "unplugin-vue-components/vite";
 import Icons from "unplugin-icons/vite";

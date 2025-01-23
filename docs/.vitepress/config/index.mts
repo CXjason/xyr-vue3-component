@@ -38,6 +38,8 @@ const buildTransformers = () => {
 
 consola.debug(`DOC_ENV: ${process.env.DOC_ENV}`);
 
+console.log(1212);
+
 const locales = {};
 languages.forEach(lang => {
   locales[`/${lang}`] = {
