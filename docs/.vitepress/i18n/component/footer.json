@@ -1,0 +1,9 @@
+{
+  "cn": {
+    "source": "Source",
+    "contributors": "Contributors",
+    "component": "Component",
+    "style": "Style",
+    "docs": "Docs"
+  }
+}
