@@ -2,6 +2,7 @@ import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: "/xyr-vue3-component/",
   title: "xyr-vue3-component",
   description: "xyr vue3 组件库",
   themeConfig: {
