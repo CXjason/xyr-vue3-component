@@ -27,7 +27,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
 
   return {
-    base: "./",
+    base: "/xyr-vue3-component/",
     server: {
       host: true,
       port: 5175,
