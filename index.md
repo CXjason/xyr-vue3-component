@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: "xyr vue3 组件库"
-  text: "vue3 公用组件库封装"
-  tagline:
+  name: "My Awesome Project"
+  text: "A VitePress Site"
+  tagline: My great project tagline
   actions:
     - theme: brand
       text: Markdown Examples
@@ -22,3 +22,4 @@ features:
   - title: Feature C
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
+

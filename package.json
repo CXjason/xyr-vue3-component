@@ -17,9 +17,9 @@
     "lint:pretty": "pretty-quick --staed",
     "pub": "pub lib",
     "prepare": "husky",
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:dev": "pnpm -C docs dev",
+    "docs:build": "pnpm -C docs build",
+    "docs:preview": "pnpm -C docs preview"
   },
   "keywords": [],
   "author": "",
